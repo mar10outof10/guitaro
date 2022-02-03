@@ -1,7 +1,11 @@
 import './TuningPost.scss';
 
-const TuningPost = () => {
-  return(null);
+const tuningPost = () => {
+  return(
+    <div className="tuningPost">
+      
+    </div>
+  );
 }
 
 export default TuningPost;

@@ -1,7 +1,11 @@
 import './Interactive.scss';
 
 const Interactive = () => {
-  return(null);
+  return(
+    <div className="interactive">
+      
+    </div>
+  );
 }
 
 export default Interactive;

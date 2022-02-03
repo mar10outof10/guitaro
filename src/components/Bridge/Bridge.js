@@ -1,7 +1,10 @@
 import './Bridge.scss';
 
 const Bridge = () => {
-  return(null);
+  return (
+  <div className="bridge">
+  </div>
+  )
 }
 
 export default Bridge;

@@ -1,7 +1,11 @@
 import './Header.scss';
 
 const Header = () => {
-  return(null);
+  return(
+    <header className="header">
+      asdf
+    </header>
+  );
 }
 
 export default Header;

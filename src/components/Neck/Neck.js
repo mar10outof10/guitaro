@@ -1,7 +1,11 @@
 import './Neck.scss';
 
 const Neck = () => {
-  return(null);
+  return(
+    <div className="neck">
+      
+    </div>
+  );
 }
 
 export default Neck;

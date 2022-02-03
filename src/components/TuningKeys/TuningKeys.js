@@ -1,7 +1,11 @@
 import './TuningKeys.scss';
 
 const TuningKeys = () => {
-  return(null);
+  return(
+    <div className="tuningKeys">
+      
+    </div>
+  );
 }
 
 export default TuningKeys;

@@ -1,7 +1,11 @@
 import './GuitarHead.scss';
 
 const GuitarHead = () => {
-  return(null);
+  return(
+    <div className="guitarHead">
+      
+    </div>
+  );
 }
 
 export default GuitarHead;

@@ -1,7 +1,11 @@
 import './ContentContainer.scss';
 
 const ContentContainer = () => {
-  return(null);
+  return(
+    <div className="contentContainer">
+      
+    </div>
+  );
 }
 
 export default ContentContainer;

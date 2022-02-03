@@ -1,7 +1,11 @@
 import './PageContainer.scss';
 
 const PageContainer = () => {
-  return(null);
+  return(
+    <div className="pageContainer">
+      
+    </div>
+  );
 }
 
 export default PageContainer;
