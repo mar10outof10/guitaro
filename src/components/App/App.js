@@ -1,17 +1,16 @@
 import './App.scss';
+import Header from '../Header/Header';
+import PageContainer from '../PageContainer/PageContainer';
+import Footer from '../Footer/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <div className="GuitaroContainer">
-        <div className="GuitaroWindow">
-          yass
-        </div>
-        <div className="GuitaroUI">
-
-        </div>
-      </div>
-    </div>
+    <>
+      <Header />
+      <PageContainer />
+      <Footer />
+      blah
+    </>
   );
 }
 
