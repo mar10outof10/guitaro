@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import Header from './Header';
+import TuningKey from './TuningKey';
 
 test.skip('renders', () => {
-  render(<Header />);
-  const linkElement = screen.getByText(/header/i);
+  render(<TuningKey />);
+  const linkElement = screen.getByText(/tuningkey/i);
   expect(linkElement).toBeInTheDocument();
 });

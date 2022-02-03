@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import Header from './Header';
+import NeckString from './NeckString';
 
 test.skip('renders', () => {
-  render(<Header />);
-  const linkElement = screen.getByText(/header/i);
+  render(<NeckString />);
+  const linkElement = screen.getByText(/neckString/i);
   expect(linkElement).toBeInTheDocument();
 });

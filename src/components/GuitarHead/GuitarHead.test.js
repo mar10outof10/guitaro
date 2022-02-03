@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import Header from './Header';
+import GuitarHead from './GuitarHead';
 
 test.skip('renders', () => {
-  render(<Header />);
-  const linkElement = screen.getByText(/header/i);
+  render(<GuitarHead />);
+  const linkElement = screen.getByText(/guitarhead/i);
   expect(linkElement).toBeInTheDocument();
 });

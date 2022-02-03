@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import Header from './Header';
+import PageContainer from './PageContainer';
 
 test.skip('renders', () => {
-  render(<Header />);
-  const linkElement = screen.getByText(/header/i);
+  render(<PageContainer />);
+  const linkElement = screen.getByText(/pagecontainer/i);
   expect(linkElement).toBeInTheDocument();
 });
