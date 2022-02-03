@@ -1,11 +1,7 @@
-import './HeaderOptions.scss';
+import "./HeaderOptions.scss";
 
 const HeaderOptions = () => {
-  return(
-    <div className="headerOptions">
-
-    </div>
-  );
-}
+  return <div className="headerOptions"></div>;
+};
 
 export default HeaderOptions;

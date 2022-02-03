@@ -1,11 +1,7 @@
-import './PageContainer.scss';
+import "./PageContainer.scss";
 
 const PageContainer = () => {
-  return(
-    <div className="pageContainer">
-      
-    </div>
-  );
-}
+  return <div className="pageContainer"></div>;
+};
 
 export default PageContainer;

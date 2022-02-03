@@ -1,11 +1,7 @@
-import './NeckString.scss';
+import "./NeckString.scss";
 
 const NeckString = () => {
-  return(
-    <div className="neckString">
-      
-    </div>
-  );
-}
+  return <div className="neckString"></div>;
+};
 
 export default NeckString;
