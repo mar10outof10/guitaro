@@ -5,7 +5,8 @@
     },
     "extends": [
         "plugin:react/recommended",
-        "prettier"
+        "prettier",
+        "plugin:react/jsx-runtime"
     ],
     "parserOptions": {
         "ecmaFeatures": {
