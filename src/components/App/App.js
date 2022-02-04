@@ -1,7 +1,7 @@
 import "./App.scss";
-import Header from "../Header/Header";
-import PageContainer from "../PageContainer/PageContainer";
-import Footer from "../Footer/Footer";
+import Header from "../Header/Header.js";
+import PageContainer from "../PageContainer/PageContainer.js";
+import Footer from "../Footer/Footer.js";
 
 function App() {
   return (

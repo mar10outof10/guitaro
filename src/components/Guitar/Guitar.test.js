@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Guitar from "./Guitar";
+import Guitar from "./Guitar.js";
 
 test.skip("renders", () => {
   render(<Guitar />);

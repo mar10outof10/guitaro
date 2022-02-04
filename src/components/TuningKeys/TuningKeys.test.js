@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import TuningKeys from "./TuningKeys";
+import TuningKeys from "./TuningKeys.js";
 
 test.skip("renders", () => {
   render(<TuningKeys />);

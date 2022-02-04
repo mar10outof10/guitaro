@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Footer from "./Footer";
+import Footer from "./Footer.js";
 
 test.skip("renders", () => {
   render(<Footer />);

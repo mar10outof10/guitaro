@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import ContentContainer from "./ContentContainer";
+import ContentContainer from "./ContentContainer.js";
 
 test.skip("renders", () => {
   render(<ContentContainer />);

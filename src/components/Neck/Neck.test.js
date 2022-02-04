@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Neck from "./Neck";
+import Neck from "./Neck.js";
 
 test.skip("renders", () => {
   render(<Neck />);

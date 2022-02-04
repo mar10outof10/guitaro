@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import HeaderOptions from "./HeaderOptions";
+import HeaderOptions from "./HeaderOptions.js";
 
 test.skip("renders", () => {
   render(<HeaderOptions />);

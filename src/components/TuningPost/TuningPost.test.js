@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import TuningPost from "./TuningPost";
+import TuningPost from "./TuningPost.js";
 
 test.skip("renders", () => {
   render(<TuningPost />);
