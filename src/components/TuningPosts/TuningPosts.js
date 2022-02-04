@@ -1,6 +1,6 @@
 import "./TuningPosts.scss";
 
-const tuningPosts = () => {
+const TuningPosts = () => {
   return <div className="tuningPosts"></div>;
 };
 
