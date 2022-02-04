@@ -1,5 +1,5 @@
 import "./Header.scss";
-import HeaderOptions from "../HeaderOptions/HeaderOptions.js";
+import HeaderOptions from "./HeaderOptions/HeaderOptions.js";
 
 const Header = () => {
   return (

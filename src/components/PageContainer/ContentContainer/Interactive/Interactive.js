@@ -1,5 +1,5 @@
 import "./Interactive.scss";
-import Guitar from "../Guitar/Guitar.js";
+import Guitar from "./Guitar/Guitar.js";
 
 const Interactive = () => {
   return (

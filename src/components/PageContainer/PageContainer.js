@@ -1,5 +1,5 @@
 import "./PageContainer.scss";
-import ContentContainer from "../ContentContainer/ContentContainer.js";
+import ContentContainer from "./ContentContainer/ContentContainer.js";
 
 const PageContainer = () => {
   return (
