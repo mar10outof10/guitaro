@@ -1,2 +1,7 @@
 .guitar {
+  display: flex;
+  width: 300px;
+  height: 600px;
+  border: solid blue;
+  flex-direction: column;
 }
