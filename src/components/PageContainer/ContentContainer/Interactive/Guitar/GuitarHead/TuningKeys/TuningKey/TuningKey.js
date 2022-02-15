@@ -1,7 +1,9 @@
 import "./TuningKey.scss";
 
-const TuningKey = () => {
-  return <div className="tuningKey"></div>;
+const TuningKey = (props) => {
+  let tuningClasses = `tuningKey tuningKey__${props.side}`;
+
+  return <div className={tuningClasses}></div>;
 };
 
 export default TuningKey;

@@ -1,2 +1,15 @@
 .tuningKeys {
+  display: flex;
+  height: 126px;
+  width: 163px;
+  justify-content: space-between;
+  position: relative;
+  top: 72.4px;
+  left: 65.8px;
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }

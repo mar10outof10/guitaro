@@ -1,2 +1,13 @@
 .tuningKey {
+  width: 30.4px;
+  height: 25.8px;
+  z-index: -1;
+
+  &__left {
+    background-image: url(~/src/assets/images/guitar/TuningKeyLeft.svg);
+  }
+
+  &__right {
+    background-image: url(~/src/assets/images/guitar/TuningKeyRight.svg);
+  }
 }

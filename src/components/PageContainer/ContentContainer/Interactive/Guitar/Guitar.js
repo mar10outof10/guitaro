@@ -1,12 +1,12 @@
 import "./Guitar.scss";
 import GuitarHead from "./GuitarHead/GuitarHead.js";
-import Neck from "./Neck/Neck.js";
+import GuitarNeck from "./GuitarNeck/GuitarNeck.js";
 
 const Guitar = () => {
   return (
     <div className="guitar">
       <GuitarHead />
-      <Neck />
+      <GuitarNeck />
     </div>
   );
 };
