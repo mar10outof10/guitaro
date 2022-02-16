@@ -1,2 +1,29 @@
 .tuningPost {
+  width: 20px;
+  height: 20px;
+  z-index: 10;
+
+  &__1 {
+    background-image: url(~/src/assets/images/guitar/TuningPost1.svg);
+  }
+
+  &__2 {
+    background-image: url(~/src/assets/images/guitar/TuningPost2.svg);
+  }
+
+  &__3 {
+    background-image: url(~/src/assets/images/guitar/TuningPost3.svg);
+  }
+
+  &__4 {
+    background-image: url(~/src/assets/images/guitar/TuningPost4.svg);
+  }
+
+  &__5 {
+    background-image: url(~/src/assets/images/guitar/TuningPost5.svg);
+  }
+
+  &__6 {
+    background-image: url(~/src/assets/images/guitar/TuningPost6.svg);
+  }
 }
