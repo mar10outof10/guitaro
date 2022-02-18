@@ -12,11 +12,10 @@ const TuningKeyClickBox = ({ side }) => {
         return state - 1;
     }
   };
+
   const [freq, freqDispatch] = React.useReducer(freqReducer, 1);
 
   const [mouseY, setMouseY] = React.useState(0);
-
-  const [dragState, setDragState] = React.useState(null);
 
   const image = React.useRef(null);
   React.useEffect(() => {
@@ -25,7 +24,7 @@ const TuningKeyClickBox = ({ side }) => {
   }, []);
 
   const initMouseDown = (event) => {
-    console.log("ye");
+    console.log("mousedown");
     event.target.style.cursor = image.current;
     event.dataTransfer.setDragImage(image.current, 0, 20);
     setMouseY(event.clientY);
@@ -37,13 +36,9 @@ const TuningKeyClickBox = ({ side }) => {
 
   const dragCheck = (event) => {
     event.preventDefault();
-    console.log("yiss");
-    console.log(`${mouseY} ${event.clientY} freq ${freq}`);
     if (event.clientY < mouseY) {
-      setDragState("UP");
       freqDispatch({ type: "INCREASE_FREQ" });
     } else if (event.clientY > mouseY) {
-      setDragState("DOWN");
       freqDispatch({ type: "DECREASE_FREQ" });
     }
     setMouseY(event.clientY);
