@@ -5,11 +5,36 @@
   justify-content: space-between;
   position: absolute;
   top: 72.4px;
-  left: 65.8px;
+  left: 67.4px;
 
   &__column {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+
+  &__clickBox {
+    height: 26px;
+    width: 24px;
+    position: absolute;
+    cursor: grab;
+
+    &__left {
+      left: -2px;
+    }
+
+    &__right {
+      left: 140px;
+    }
+
+    &:first-child {
+      top: 0px;
+    }
+    &:nth-child(2) {
+      top: 50px;
+    }
+    &:nth-child(3) {
+      top: 100px;
+    }
   }
 }
