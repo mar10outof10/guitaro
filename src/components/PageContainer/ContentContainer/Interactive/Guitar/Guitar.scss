@@ -2,7 +2,8 @@
   display: flex;
   width: 300px;
   height: 600px;
-  border: solid blue;
+  border-right: solid 1px black;
   flex-direction: column;
   position: relative;
+  background: darkolivegreen;
 }
