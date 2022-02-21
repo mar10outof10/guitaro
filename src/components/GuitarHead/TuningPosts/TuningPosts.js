@@ -5,15 +5,15 @@ const TuningPosts = () => {
   return (
     <div className="tuningPosts">
       <div className="tuningPosts__column">
-        <TuningPost string="3" />{" "}
+        <TuningPost id="3" />
         {/* Guitar strings start from bottom left therefore top left is string 3*/}
-        <TuningPost string="2" />
-        <TuningPost string="1" />
+        <TuningPost id="2" />
+        <TuningPost id="1" />
       </div>
       <div className="tuningPosts__column">
-        <TuningPost string="4" />
-        <TuningPost string="5" />
-        <TuningPost string="6" />
+        <TuningPost id="4" />
+        <TuningPost id="5" />
+        <TuningPost id="6" />
       </div>
     </div>
   );

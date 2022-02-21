@@ -1,0 +1,16 @@
+.headStrings {
+  display: flex;
+  height: 215.6px;
+  width: 68.1px;
+  justify-content: space-between;
+  position: absolute;
+  top: 84.4px;
+  left: 112.2px;
+  z-index: 20;
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}

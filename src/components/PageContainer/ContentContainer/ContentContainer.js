@@ -1,10 +1,10 @@
 import "./ContentContainer.scss";
-import Interactive from "./Interactive/Interactive.js";
+import GuitarContainer from "../../GuitarContainer/GuitarContainer.js";
 
 const ContentContainer = () => {
   return (
     <div className="contentContainer">
-      <Interactive />
+      <GuitarContainer />
     </div>
   );
 };

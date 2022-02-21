@@ -1,0 +1,41 @@
+.headString {
+  position: absolute;
+  &__1 {
+    height: 116px;
+    width: 5px;
+    top: 100px;
+  }
+  &__2 {
+    height: 165.7px;
+    width: 5px;
+    top: 50px;
+    left: 6.5px;
+    transform: skewX(5deg);
+  }
+  &__3 {
+    height: 215.6px;
+    width: 4px;
+    top: 0px;
+    left: 13px;
+    transform: skewX(8deg);
+  }
+  &__4 {
+    height: 215.6px;
+    width: 3px;
+    top: 0px;
+    right: 13px;
+    transform: skewX(-8deg);
+  }
+  &__5 {
+    height: 165.7px;
+    width: 2px;
+    top: 50px;
+    right: 6.5px;
+    transform: skewX(-5deg);
+  }
+  &__6 {
+    height: 116px;
+    width: 2px;
+    top: 100px;
+  }
+}

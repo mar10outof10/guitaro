@@ -1,7 +1,7 @@
 import "./TuningKeyClickBox.scss";
 import TuningKey from "./TuningKey/TuningKey.js";
 import React from "react";
-import NoteIcon from "../../../../../../../../assets/images/note_icon.png";
+import NoteIcon from "../../../../assets/images/note_icon.png";
 
 const TuningKeyClickBox = ({ side }) => {
   const freqReducer = (state, action) => {

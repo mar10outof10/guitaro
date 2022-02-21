@@ -1,7 +1,7 @@
 import "./TuningPost.scss";
 
 const TuningPost = (props) => {
-  let tuningClasses = `tuningPost tuningPost__${props.string}`;
+  let tuningClasses = `tuningPost tuningPost__${props.id}`;
 
   return <div className={tuningClasses}></div>;
 };

@@ -1,6 +1,6 @@
 import "./Guitar.scss";
-import GuitarHead from "./GuitarHead/GuitarHead.js";
-import GuitarNeck from "./GuitarNeck/GuitarNeck.js";
+import GuitarHead from "../../GuitarHead/GuitarHead.js";
+import GuitarNeck from "../../GuitarNeck/GuitarNeck.js";
 
 const Guitar = () => {
   return (
