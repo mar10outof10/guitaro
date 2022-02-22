@@ -2,19 +2,10 @@ import "./TuningKeyClickBox.scss";
 import TuningKey from "./TuningKey/TuningKey.js";
 import React from "react";
 import NoteIcon from "../../../../assets/images/note_icon.png";
+import { useStrings } from "../../../../hooks/stringsContext";
 
-const TuningKeyClickBox = ({ side }) => {
-  const freqReducer = (state, action) => {
-    switch (action.type) {
-      case "INCREASE_FREQ":
-        return state + 1;
-      case "DECREASE_FREQ":
-        return state - 1;
-    }
-  };
-
-  const [freq, freqDispatch] = React.useReducer(freqReducer, 1);
-
+const TuningKeyClickBox = ({ stringID, side }) => {
+  const { strings, stringsDispatch } = useStrings();
   const [mouseY, setMouseY] = React.useState(0);
 
   const image = React.useRef(null);
@@ -37,12 +28,14 @@ const TuningKeyClickBox = ({ side }) => {
   const dragCheck = (event) => {
     event.preventDefault();
     if (event.clientY < mouseY) {
-      freqDispatch({ type: "INCREASE_FREQ" });
+      stringsDispatch({ type: "INCREASE_FREQUENCY", id: stringID });
     } else if (event.clientY > mouseY) {
-      freqDispatch({ type: "DECREASE_FREQ" });
+      stringsDispatch({ type: "DECREASE_FREQUENCY", id: stringID });
     }
     setMouseY(event.clientY);
-    console.log(`new freq ${freq}`);
+    console.log(
+      `string ${stringID} new freq ${strings[stringID - 1].frequency}`
+    );
   };
 
   const clickboxClass = `tuningKeyClickBox tuningKeyClickBox__${side}`;
