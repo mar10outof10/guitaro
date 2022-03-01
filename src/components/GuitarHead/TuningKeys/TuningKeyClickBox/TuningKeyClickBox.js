@@ -3,6 +3,7 @@ import TuningKey from "./TuningKey/TuningKey.js";
 import React from "react";
 import NoteIcon from "../../../../assets/images/note_icon.png";
 import { useStrings } from "../../../../hooks/stringsContext";
+import PropTypes from "prop-types";
 
 const TuningKeyClickBox = ({ stringID, side }) => {
   const { strings, stringsDispatch } = useStrings();
@@ -47,6 +48,11 @@ const TuningKeyClickBox = ({ stringID, side }) => {
       <TuningKey side={side}></TuningKey>
     </div>
   );
+};
+
+TuningKeyClickBox.propTypes = {
+  stringID: PropTypes.number,
+  side: PropTypes.string,
 };
 
 export default TuningKeyClickBox;

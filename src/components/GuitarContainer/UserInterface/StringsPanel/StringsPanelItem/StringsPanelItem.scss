@@ -1,2 +1,15 @@
 .stringsPanelItem {
+  display: flex;
+  gap: 20px;
+  text-align: start;
+
+  &__stringID {
+    width: 20px;
+  }
+  &__frequency {
+    width: 150px;
+  }
+  &__note {
+    width: 30px;
+  }
 }

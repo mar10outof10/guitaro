@@ -20,14 +20,18 @@ const StringsPanelItem = ({ id, frequency }) => {
 
   return (
     <li className="stringsPanelItem">
-      {id} Frequency: {frequency}hz {stringNote}
+      <div className="stringsPanelItem__stringID">{id}</div>
+      <div className="stringsPanelItem__frequency">
+        Frequency: {frequency}hz
+      </div>
+      <div className="stringsPanelItem__note">{stringNote}</div>
     </li>
   );
 };
 
 StringsPanelItem.propTypes = {
-  id: Number,
-  frequency: Number,
+  id: PropTypes.number,
+  frequency: PropTypes.number,
 };
 
 export default StringsPanelItem;

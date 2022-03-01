@@ -33,6 +33,9 @@ const GuitarContainer = () => {
             return string;
           }
         });
+      case "RESET_STRINGS_ESTANDARD":
+        console.log("reset");
+        return initialStrings;
       default:
         return state;
     }
