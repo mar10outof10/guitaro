@@ -1,3 +1,37 @@
 .neckString {
+  position: absolute;
   cursor: sw-resize;
+  object-fit: cover;
+
+  height: 300px;
+
+  &__1 {
+    width: 2.7px;
+    left: 113.2px;
+  }
+
+  &__2 {
+    width: 2.4px;
+    left: 126.8px;
+  }
+
+  &__3 {
+    width: 2px;
+    left: 139.3px;
+  }
+
+  &__4 {
+    width: 1.6px;
+    left: 152.9px;
+  }
+
+  &__5 {
+    width: 1.3px;
+    left: 165.9px;
+  }
+
+  &__6 {
+    width: 1px;
+    left: 176.2px;
+  }
 }

@@ -1,4 +1,5 @@
 import "./HeadString.scss";
+import PropTypes from "prop-types";
 
 const HeadString = ({ id }) => {
   const headStringClass = `headString headString__${id}`;
@@ -11,8 +12,11 @@ const HeadString = ({ id }) => {
       className={headStringClass}
       src={require(`../../../../assets/images/guitar/GuitarNeck_String${id}.svg`)}
       onMouseEnter={hoverString}
-    ></img>
+    />
   );
 };
 
+HeadString.propTypes = {
+  id: PropTypes.number,
+};
 export default HeadString;
