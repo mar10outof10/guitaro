@@ -1,7 +1,7 @@
 import "./GuitarContainer.scss";
 import Guitar from "./Guitar/Guitar.js";
 import UserInterface from "./UserInterface/UserInterface.js";
-import eStandardTuning from "../../assets/schema/constants";
+import { eStandardTuning } from "../../assets/schema/constants";
 import React from "react";
 
 import { StringsProvider, useStrings } from "../../hooks/stringsContext.js";

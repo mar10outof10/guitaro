@@ -206,4 +206,4 @@ const freqTable = {
   },
 };
 
-export default eStandardTuning;
+export { freqTable, eStandardTuning };
