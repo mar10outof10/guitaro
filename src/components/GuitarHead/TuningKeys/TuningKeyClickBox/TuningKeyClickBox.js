@@ -15,14 +15,14 @@ const TuningKeyClickBox = ({ stringID, side }) => {
   }, []);
 
   const initMouseDown = (event) => {
-    console.log("mousedown");
+    console.log("tKey mousedown");
     event.target.style.cursor = image.current;
     event.dataTransfer.setDragImage(image.current, 0, 20);
     setMouseY(event.clientY);
   };
 
   const initMouseUp = (event) => {
-    console.log("mouseup");
+    console.log("tKey mouseup");
   };
 
   const dragCheck = (event) => {
@@ -33,9 +33,6 @@ const TuningKeyClickBox = ({ stringID, side }) => {
       stringsDispatch({ type: "DECREASE_FREQUENCY", id: stringID });
     }
     setMouseY(event.clientY);
-    console.log(
-      `string ${stringID} new freq ${strings[stringID - 1].frequency}`
-    );
   };
 
   const clickboxClass = `tuningKeyClickBox tuningKeyClickBox__${side}`;
