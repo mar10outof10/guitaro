@@ -8,7 +8,7 @@ const ResetButton = () => {
     stringsDispatch({ type: "RESET_STRINGS_ESTANDARD" });
 
   return (
-    <button className="ResetButton" onClick={resetStrings}>
+    <button className="resetButton" onClick={resetStrings}>
       Reset!
     </button>
   );

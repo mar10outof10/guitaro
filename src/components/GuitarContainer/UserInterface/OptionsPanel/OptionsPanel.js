@@ -3,7 +3,7 @@ import ResetButton from "./ResetButton/ResetButton";
 
 const OptionsPanel = () => {
   return (
-    <section className="OptionsPanel">
+    <section className="optionsPanel">
       <ResetButton />
     </section>
   );
