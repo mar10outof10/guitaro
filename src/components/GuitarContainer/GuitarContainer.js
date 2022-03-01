@@ -5,6 +5,7 @@ import { eStandardTuning } from "../../assets/schema/constants";
 import React from "react";
 
 import { StringsProvider, useStrings } from "../../hooks/stringsContext.js";
+import { AudioProvider, useAudio } from "../../hooks/audioContext.js";
 
 const GuitarContainer = () => {
   const initialStrings = [...eStandardTuning];
@@ -44,12 +45,35 @@ const GuitarContainer = () => {
     stringsReducer,
     initialStrings
   );
+
+  const audioReducer = (state, action) => {
+    switch (action.type) {
+      case "INITIALIZE_AUDIO_CONTEXT":
+        console.log(action);
+        return new (window.AudioContext || window.webkitAudioContext)();
+      case "PLAY_FREQUENCY":
+        const newContext = new (window.AudioContext ||
+          window.webkitAudioContext)();
+        const oscillator = newContext.createOscillator();
+
+        oscillator.type = "square";
+        oscillator.frequency.value = action.frequency;
+        oscillator.connect(newContext.destination);
+        oscillator.start(0);
+        oscillator.stop(newContext.currentTime + 1);
+    }
+  };
+
+  const [audioContext, audioDispatch] = React.useReducer(audioReducer, null);
+
   return (
     <StringsProvider value={{ stringsDispatch, strings }}>
-      <div className="guitarContainer">
-        <Guitar />
-        <UserInterface />
-      </div>
+      <AudioProvider value={{ audioDispatch, audioContext }}>
+        <div className="guitarContainer">
+          <Guitar />
+          <UserInterface />
+        </div>
+      </AudioProvider>
     </StringsProvider>
   );
 };
