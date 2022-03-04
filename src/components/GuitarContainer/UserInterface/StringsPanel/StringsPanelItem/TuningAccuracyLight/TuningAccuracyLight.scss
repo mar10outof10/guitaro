@@ -1,0 +1,8 @@
+.tuningAccuracyLight {
+  width: 20px;
+  height: 20px;
+  border: solid black 4px;
+  border-radius: 100%;
+  background: radial-gradient(circle at top, green, 100%, transparent),
+    radial-gradient(ellipse at bottom, red, #006f1600);
+}
