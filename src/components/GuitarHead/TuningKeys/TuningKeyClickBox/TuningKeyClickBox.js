@@ -5,7 +5,10 @@ import NoteIcon from "../../../../assets/images/note_icon.png";
 import { useStrings } from "../../../../hooks/stringsContext";
 import PropTypes from "prop-types";
 
-const TuningKeyClickBox = ({ stringID, side }) => {
+const TuningKeyClickBox = React.memo(function TuningKeyClickBox({
+  stringID,
+  side,
+}) {
   const { strings, stringsDispatch } = useStrings();
   const [mouseY, setMouseY] = React.useState(0);
 
@@ -48,7 +51,7 @@ const TuningKeyClickBox = ({ stringID, side }) => {
       <TuningKey side={side}></TuningKey>
     </div>
   );
-};
+});
 
 TuningKeyClickBox.propTypes = {
   stringID: PropTypes.number,

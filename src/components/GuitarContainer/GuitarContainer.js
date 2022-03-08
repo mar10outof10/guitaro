@@ -9,7 +9,7 @@ import { AudioProvider, useAudio } from "../../hooks/audioContext.js";
 
 import * as Tone from "tone";
 
-const GuitarContainer = () => {
+const GuitarContainer = React.memo(function GuitarContainer() {
   const initialStrings = [...eStandardTuning];
 
   const stringsReducer = (state, action) => {
@@ -81,6 +81,6 @@ const GuitarContainer = () => {
       </AudioProvider>
     </StringsProvider>
   );
-};
+});
 
 export default GuitarContainer;

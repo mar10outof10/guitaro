@@ -1,7 +1,8 @@
 import "./HeadStrings.scss";
+import React from "react";
 import HeadString from "./HeadString/HeadString.js";
 
-const HeadStrings = () => {
+const HeadStrings = React.memo(function HeadStrings() {
   return (
     <div className="headStrings">
       <div className="headStrings__column">
@@ -17,6 +18,6 @@ const HeadStrings = () => {
       </div>
     </div>
   );
-};
+});
 
 export default HeadStrings;

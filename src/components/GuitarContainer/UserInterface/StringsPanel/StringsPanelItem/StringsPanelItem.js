@@ -4,7 +4,10 @@ import { freqTable } from "../../../../../assets/schema/constants";
 import PropTypes from "prop-types";
 import TuningAccuracyLight from "./TuningAccuracyLight/TuningAccuracyLight";
 
-const StringsPanelItem = ({ id, frequency }) => {
+const StringsPanelItem = React.memo(function StringsPanelItem({
+  id,
+  frequency,
+}) {
   const [stringNote, setStringNote] = React.useState();
 
   React.useEffect(() => {
@@ -31,7 +34,7 @@ const StringsPanelItem = ({ id, frequency }) => {
       )}
     </li>
   );
-};
+});
 
 StringsPanelItem.propTypes = {
   id: PropTypes.number,

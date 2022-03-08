@@ -1,7 +1,8 @@
 import "./HeadString.scss";
+import React from "react";
 import PropTypes from "prop-types";
 
-const HeadString = ({ id }) => {
+const HeadString = React.memo(function HeadString({ id }) {
   const headStringClass = `headString headString__${id}`;
 
   const hoverString = () => {
@@ -14,7 +15,7 @@ const HeadString = ({ id }) => {
       onMouseEnter={hoverString}
     />
   );
-};
+});
 
 HeadString.propTypes = {
   id: PropTypes.number,

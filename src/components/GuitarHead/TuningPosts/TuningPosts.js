@@ -1,7 +1,8 @@
 import "./TuningPosts.scss";
+import React from "react";
 import TuningPost from "./TuningPost/TuningPost.js";
 
-const TuningPosts = () => {
+const TuningPosts = React.memo(function TuningPosts() {
   return (
     <div className="tuningPosts">
       <div className="tuningPosts__column">
@@ -17,6 +18,6 @@ const TuningPosts = () => {
       </div>
     </div>
   );
-};
+});
 
 export default TuningPosts;

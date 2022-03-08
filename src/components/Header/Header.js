@@ -1,7 +1,8 @@
 import "./Header.scss";
+import React from "react";
 import HeaderOptions from "./HeaderOptions/HeaderOptions.js";
 
-const Header = () => {
+const Header = React.memo(function Header() {
   return (
     <header className="header">
       <div className="header_logoContainer">
@@ -14,6 +15,6 @@ const Header = () => {
       <HeaderOptions />
     </header>
   );
-};
+});
 
 export default Header;

@@ -3,7 +3,11 @@ import "./TuningAccuracyLight.scss";
 import { freqTable } from "../../../../../../assets/schema/constants";
 import PropTypes from "prop-types";
 
-const TuningAccuracyLight = ({ id, note, frequency }) => {
+const TuningAccuracyLight = React.memo(function TuningAccuracyLight({
+  id,
+  note,
+  frequency,
+}) {
   // console.log(note);
 
   const [lowRange, setLowRange] = React.useState(freqTable[note].low);
@@ -54,7 +58,7 @@ const TuningAccuracyLight = ({ id, note, frequency }) => {
     highRange
   );
   return <div className="tuningAccuracyLight" style={style}></div>;
-};
+});
 
 TuningAccuracyLight.propTypes = {
   id: PropTypes.number,

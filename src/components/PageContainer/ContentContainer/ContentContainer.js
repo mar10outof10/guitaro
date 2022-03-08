@@ -1,12 +1,13 @@
 import "./ContentContainer.scss";
+import React from "react";
 import GuitarContainer from "../../GuitarContainer/GuitarContainer.js";
 
-const ContentContainer = () => {
+const ContentContainer = React.memo(function ContentContainer() {
   return (
     <div className="contentContainer">
       <GuitarContainer />
     </div>
   );
-};
+});
 
 export default ContentContainer;
