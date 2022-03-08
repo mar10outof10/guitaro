@@ -10,21 +10,22 @@ const TuningKeyClickBox = React.memo(function TuningKeyClickBox({
   stringID,
   side,
 }) {
-  const { stringsDispatch } = useStrings();
+  const { stringsDispatch } = React.useCallback(useStrings());
   const [mouseY, setMouseY] = React.useState(0);
   console.log("tkcb rerender");
 
-  const dragCheck = (event) => {
+  const dragCheck = React.useCallback((event) => {
     event.preventDefault();
-    console.log(event.clientY, mouseY);
     if (event.clientY < mouseY) {
       stringsDispatch({ type: "INCREASE_FREQUENCY", id: stringID });
     } else if (event.clientY > mouseY) {
       stringsDispatch({ type: "DECREASE_FREQUENCY", id: stringID });
     }
-  };
+  });
 
-  const clickboxClass = `tuningKeyClickBox tuningKeyClickBox__${side}`;
+  const clickboxClass = React.useMemo(
+    () => `tuningKeyClickBox tuningKeyClickBox__${side}`
+  );
 
   return (
     <div
