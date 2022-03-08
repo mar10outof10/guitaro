@@ -1,7 +1,8 @@
 import "./TuningKeys.scss";
+import React from "react";
 import TuningKeyClickBox from "./TuningKeyClickBox/TuningKeyClickBox.js";
 
-const TuningKeys = () => {
+const TuningKeys = React.memo(function TuningKeys() {
   return (
     <div className="tuningKeys">
       <div className="tuningKeys__column">
@@ -16,6 +17,6 @@ const TuningKeys = () => {
       </div>
     </div>
   );
-};
+});
 
 export default TuningKeys;

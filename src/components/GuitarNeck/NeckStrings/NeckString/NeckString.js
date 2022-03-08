@@ -1,9 +1,10 @@
 import "./NeckString.scss";
+import React from "react";
 import PropTypes from "prop-types";
 import { useAudio } from "../../../../hooks/audioContext";
 import { useStrings } from "../../../../hooks/stringsContext";
 
-const NeckString = ({ id }) => {
+const NeckString = React.memo(function NeckString({ id }) {
   const { audioDispatch } = useAudio();
   const { strings } = useStrings();
 
@@ -24,7 +25,7 @@ const NeckString = ({ id }) => {
       onMouseEnter={hoverString}
     />
   );
-};
+});
 
 NeckString.propTypes = {
   id: PropTypes.number,
