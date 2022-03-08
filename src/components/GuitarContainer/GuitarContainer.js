@@ -1,7 +1,7 @@
 import "./GuitarContainer.scss";
 import Guitar from "./Guitar/Guitar.js";
 import UserInterface from "./UserInterface/UserInterface.js";
-import { eStandardTuning } from "../../assets/schema/constants";
+import { eStandardTuning, freqTable } from "../../assets/schema/constants";
 import React from "react";
 
 import { StringsProvider, useStrings } from "../../hooks/stringsContext.js";
@@ -10,6 +10,7 @@ import { AudioProvider, useAudio } from "../../hooks/audioContext.js";
 import * as Tone from "tone";
 
 const GuitarContainer = React.memo(function GuitarContainer() {
+  console.log("gc rerender");
   const initialStrings = [...eStandardTuning];
 
   const stringsReducer = (state, action) => {
@@ -36,6 +37,17 @@ const GuitarContainer = React.memo(function GuitarContainer() {
             return string;
           }
         });
+      case "SET_FREQUENCY_TO_NOTE":
+        return state.map((string) => {
+          if (string.id === action.id) {
+            return {
+              ...string,
+              frequency: freqTable[action.note].freq,
+            };
+          } else {
+            return string;
+          }
+        });
       case "RESET_STRINGS_ESTANDARD":
         console.log("reset");
         return initialStrings;
@@ -56,7 +68,6 @@ const GuitarContainer = React.memo(function GuitarContainer() {
       case "PLAY_FREQUENCY":
         let blah = new Tone.Synth().toDestination();
         blah.triggerAttackRelease(action.frequency, "8n");
-        blah.context.close;
       // const newContext = new (window.AudioContext ||
       //   window.webkitAudioContext)();
       // const oscillator = newContext.createOscillator();

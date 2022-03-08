@@ -2,21 +2,25 @@ import React from "react";
 import "./TuningAccuracyLight.scss";
 import { freqTable } from "../../../../../../assets/schema/constants";
 import PropTypes from "prop-types";
+import { useStrings } from "../../../../../../hooks/stringsContext";
 
-const TuningAccuracyLight = React.memo(function TuningAccuracyLight({
+const TuningAccuracyLight = function TuningAccuracyLight({
   id,
   note,
   frequency,
 }) {
-  // console.log(note);
-
   const [lowRange, setLowRange] = React.useState(freqTable[note].low);
   const [highRange, setHighRange] = React.useState(freqTable[note].high);
   const [mid, setMid] = React.useState(freqTable[note].freq);
   const [accuracy, setAccuracy] = React.useState(100);
   const [style, setStyle] = React.useState();
 
-  React.useEffect(async () => {
+  const { stringsDispatch } = useStrings();
+
+  const setFreqToNote = () =>
+    stringsDispatch({ type: "SET_FREQUENCY_TO_NOTE", id, note });
+
+  React.useEffect(() => {
     setMid(freqTable[note].freq);
     setLowRange(freqTable[note].freq - freqTable[note].low);
     setHighRange(freqTable[note].high - freqTable[note].freq);
@@ -57,8 +61,14 @@ const TuningAccuracyLight = React.memo(function TuningAccuracyLight({
     freqTable[note].high,
     highRange
   );
-  return <div className="tuningAccuracyLight" style={style}></div>;
-});
+  return (
+    <div
+      className="tuningAccuracyLight"
+      style={style}
+      onClick={setFreqToNote}
+    ></div>
+  );
+};
 
 TuningAccuracyLight.propTypes = {
   id: PropTypes.number,

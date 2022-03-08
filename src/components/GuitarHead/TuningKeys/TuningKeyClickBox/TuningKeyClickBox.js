@@ -9,9 +9,9 @@ const TuningKeyClickBox = React.memo(function TuningKeyClickBox({
   stringID,
   side,
 }) {
-  const { strings, stringsDispatch } = useStrings();
+  const { stringsDispatch } = useStrings();
   const [mouseY, setMouseY] = React.useState(0);
-
+  console.log("tkcb rerender");
   const image = React.useRef(null);
   React.useEffect(() => {
     image.current = new Image();
@@ -19,14 +19,14 @@ const TuningKeyClickBox = React.memo(function TuningKeyClickBox({
   }, []);
 
   const initMouseDown = (event) => {
-    console.log("tKey mousedown");
+    console.log("tKey dragStart");
     event.target.style.cursor = image.current;
     event.dataTransfer.setDragImage(image.current, 0, 20);
     setMouseY(event.clientY);
   };
 
   const initMouseUp = (event) => {
-    console.log("tKey mouseup");
+    console.log("tKey dragEnd");
   };
 
   const dragCheck = (event) => {
