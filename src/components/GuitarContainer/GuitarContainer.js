@@ -7,6 +7,8 @@ import React from "react";
 import { StringsProvider, useStrings } from "../../hooks/stringsContext.js";
 import { AudioProvider, useAudio } from "../../hooks/audioContext.js";
 
+import * as Tone from "tone";
+
 const GuitarContainer = () => {
   const initialStrings = [...eStandardTuning];
 
@@ -50,17 +52,19 @@ const GuitarContainer = () => {
     switch (action.type) {
       case "INITIALIZE_AUDIO_CONTEXT":
         console.log(action);
-        return new (window.AudioContext || window.webkitAudioContext)();
+        return new Tone.Distortion(0.1).toDestination();
       case "PLAY_FREQUENCY":
-        const newContext = new (window.AudioContext ||
-          window.webkitAudioContext)();
-        const oscillator = newContext.createOscillator();
+        let blah = new Tone.Synth().toDestination();
+        blah.triggerAttackRelease(action.frequency, "8n");
+      // const newContext = new (window.AudioContext ||
+      //   window.webkitAudioContext)();
+      // const oscillator = newContext.createOscillator();
 
-        oscillator.type = "square";
-        oscillator.frequency.value = action.frequency;
-        oscillator.connect(newContext.destination);
-        oscillator.start(0);
-        oscillator.stop(newContext.currentTime + 1);
+      // oscillator.type = "square";
+      // oscillator.frequency.value = action.frequency;
+      // oscillator.connect(newContext.destination);
+      // oscillator.start(0);
+      // oscillator.stop(newContext.currentTime + 1);
     }
   };
 

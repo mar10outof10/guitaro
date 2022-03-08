@@ -40,7 +40,7 @@ const TuningAccuracyLight = ({ id, note, frequency }) => {
     } else {
       setStyle({
         background: `radial-gradient(circle at center, green, ${accuracy}%, transparent), radial-gradient(ellipse at bottom, red, #006f1600)`,
-        "border-color": `#016200`,
+        borderColor: `#016200`,
       });
     }
   }, [accuracy]);
