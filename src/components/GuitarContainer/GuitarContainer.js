@@ -56,6 +56,7 @@ const GuitarContainer = () => {
       case "PLAY_FREQUENCY":
         let blah = new Tone.Synth().toDestination();
         blah.triggerAttackRelease(action.frequency, "8n");
+        blah.context.close;
       // const newContext = new (window.AudioContext ||
       //   window.webkitAudioContext)();
       // const oscillator = newContext.createOscillator();
