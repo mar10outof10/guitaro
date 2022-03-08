@@ -6,8 +6,6 @@ import React from "react";
 
 import { StringsProvider, useStrings } from "../../hooks/stringsContext.js";
 
-import * as Tone from "tone";
-
 const GuitarContainer = React.memo(function GuitarContainer() {
   console.log("gc rerender");
   const initialStrings = [...eStandardTuning];
@@ -51,9 +49,6 @@ const GuitarContainer = React.memo(function GuitarContainer() {
       case "RESET_STRINGS_ESTANDARD":
         console.log("reset");
         return initialStrings;
-      case "PLAY_STRING":
-        let audioNode = new Tone.Synth().toDestination();
-        audioNode.triggerAttackRelease(action.frequency, "8n");
       default:
         return state;
     }
