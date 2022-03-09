@@ -34,7 +34,7 @@ const TuningAccuracyLight = function TuningAccuracyLight({
         100 - Math.abs(((mid - frequency) / lowRange) * -100).toFixed(0)
       );
     }
-  }, [frequency]);
+  }, [frequency, mid]);
 
   React.useEffect(() => {
     if (frequency > mid) {
