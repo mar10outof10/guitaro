@@ -4,9 +4,7 @@ import TuningDropdownItem from "./TuningDropdownItem/TuningDropdownItem";
 import { useTuning } from "../../../../../hooks/tuningContext";
 
 const TuningDropdown = () => {
-  const { tuningDispatch, tuning } = React.useCallback(useTuning());
-
-  console.log("dd", tuningDispatch, tuning);
+  const { tuning } = React.useCallback(useTuning());
 
   return (
     <ul className="tuningDropdown">
