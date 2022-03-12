@@ -1,119 +1,158 @@
-const eStandardTuning = [
-  { id: 1, frequency: 82.4 },
-  { id: 2, frequency: 110.0 },
-  { id: 3, frequency: 146.8 },
-  { id: 4, frequency: 196.0 },
-  { id: 5, frequency: 247.0 },
-  { id: 6, frequency: 329.6 },
-];
+const eStandardTuning = {
+  tuning: [
+    { id: 1, frequency: 82.4 },
+    { id: 2, frequency: 110.0 },
+    { id: 3, frequency: 146.8 },
+    { id: 4, frequency: 196.0 },
+    { id: 5, frequency: 247.0 },
+    { id: 6, frequency: 329.6 },
+  ],
+  id: "ESTANDARD_TUNING",
+};
 
-const ebStandardTuning = [
-  { id: 1, frequency: 77.8 },
-  { id: 2, frequency: 103.8 },
-  { id: 3, frequency: 138.6 },
-  { id: 4, frequency: 185.0 },
-  { id: 5, frequency: 233.0 },
-  { id: 6, frequency: 311.2 },
-];
+const ebStandardTuning = {
+  tuning: [
+    { id: 1, frequency: 77.8 },
+    { id: 2, frequency: 103.8 },
+    { id: 3, frequency: 138.6 },
+    { id: 4, frequency: 185.0 },
+    { id: 5, frequency: 233.0 },
+    { id: 6, frequency: 311.2 },
+  ],
+  id: "ESTANDARD_TUNING",
+};
 
-const dStandardTuning = [
-  { id: 1, frequency: 73.4 },
-  { id: 2, frequency: 98.0 },
-  { id: 3, frequency: 130.8 },
-  { id: 4, frequency: 174.6 },
-  { id: 5, frequency: 220.0 },
-  { id: 6, frequency: 293.6 },
-];
+const dStandardTuning = {
+  tuning: [
+    { id: 1, frequency: 73.4 },
+    { id: 2, frequency: 98.0 },
+    { id: 3, frequency: 130.8 },
+    { id: 4, frequency: 174.6 },
+    { id: 5, frequency: 220.0 },
+    { id: 6, frequency: 293.6 },
+  ],
+  id: "ESTANDARD_TUNING",
+};
 
-const dropDTuning = [
-  { id: 1, frequency: 73.4 },
-  { id: 2, frequency: 110.0 },
-  { id: 3, frequency: 146.8 },
-  { id: 4, frequency: 196.0 },
-  { id: 5, frequency: 247.0 },
-  { id: 6, frequency: 329.6 },
-];
+const dropDTuning = {
+  tuning: [
+    { id: 1, frequency: 73.4 },
+    { id: 2, frequency: 110.0 },
+    { id: 3, frequency: 146.8 },
+    { id: 4, frequency: 196.0 },
+    { id: 5, frequency: 247.0 },
+    { id: 6, frequency: 329.6 },
+  ],
+  id: "ESTANDARD_TUNING",
+};
 
-const dropATuning = [
-  { id: 1, frequency: 55.0 },
-  { id: 2, frequency: 110.0 },
-  { id: 3, frequency: 146.8 },
-  { id: 4, frequency: 196.0 },
-  { id: 5, frequency: 247.0 },
-  { id: 6, frequency: 329.6 },
-];
+const dropATuning = {
+  tuning: [
+    { id: 1, frequency: 55.0 },
+    { id: 2, frequency: 110.0 },
+    { id: 3, frequency: 146.8 },
+    { id: 4, frequency: 196.0 },
+    { id: 5, frequency: 247.0 },
+    { id: 6, frequency: 329.6 },
+  ],
+  id: "ESTANDARD_TUNING",
+};
 
-const openATuning = [
-  { id: 1, frequency: 82.4 },
-  { id: 2, frequency: 110.0 },
-  { id: 3, frequency: 138.6 },
-  { id: 4, frequency: 164.8 },
-  { id: 5, frequency: 220.0 },
-  { id: 6, frequency: 329.6 },
-];
+const openATuning = {
+  tuning: [
+    { id: 1, frequency: 82.4 },
+    { id: 2, frequency: 110.0 },
+    { id: 3, frequency: 138.6 },
+    { id: 4, frequency: 164.8 },
+    { id: 5, frequency: 220.0 },
+    { id: 6, frequency: 329.6 },
+  ],
+  id: "ESTANDARD_TUNING",
+};
 
-const openBTuning = [
-  { id: 1, frequency: 61.8 },
-  { id: 2, frequency: 92.6 },
-  { id: 3, frequency: 123.4 },
-  { id: 4, frequency: 185.0 },
-  { id: 5, frequency: 247.0 },
-  { id: 6, frequency: 311.0 },
-];
+const openBTuning = {
+  tuning: [
+    { id: 1, frequency: 61.8 },
+    { id: 2, frequency: 92.6 },
+    { id: 3, frequency: 123.4 },
+    { id: 4, frequency: 185.0 },
+    { id: 5, frequency: 247.0 },
+    { id: 6, frequency: 311.0 },
+  ],
+  id: "ESTANDARD_TUNING",
+};
 
-const openCTuning = [
-  { id: 1, frequency: 65.4 },
-  { id: 2, frequency: 98.0 },
-  { id: 3, frequency: 130.8 },
-  { id: 4, frequency: 196.0 },
-  { id: 5, frequency: 261.6 },
-  { id: 6, frequency: 329.6 },
-];
+const openCTuning = {
+  tuning: [
+    { id: 1, frequency: 65.4 },
+    { id: 2, frequency: 98.0 },
+    { id: 3, frequency: 130.8 },
+    { id: 4, frequency: 196.0 },
+    { id: 5, frequency: 261.6 },
+    { id: 6, frequency: 329.6 },
+  ],
+  id: "ESTANDARD_TUNING",
+};
 
-const openDTuning = [
-  { id: 1, frequency: 73.4 },
-  { id: 2, frequency: 110.0 },
-  { id: 3, frequency: 146.8 },
-  { id: 4, frequency: 185.0 },
-  { id: 5, frequency: 220.0 },
-  { id: 6, frequency: 293.6 },
-];
+const openDTuning = {
+  tuning: [
+    { id: 1, frequency: 73.4 },
+    { id: 2, frequency: 110.0 },
+    { id: 3, frequency: 146.8 },
+    { id: 4, frequency: 185.0 },
+    { id: 5, frequency: 220.0 },
+    { id: 6, frequency: 293.6 },
+  ],
+  id: "ESTANDARD_TUNING",
+};
 
-const openETuning = [
-  { id: 1, frequency: 82.4 },
-  { id: 2, frequency: 123.4 },
-  { id: 3, frequency: 164.8 },
-  { id: 4, frequency: 207.6 },
-  { id: 5, frequency: 247.0 },
-  { id: 6, frequency: 329.6 },
-];
+const openETuning = {
+  tuning: [
+    { id: 1, frequency: 82.4 },
+    { id: 2, frequency: 123.4 },
+    { id: 3, frequency: 164.8 },
+    { id: 4, frequency: 207.6 },
+    { id: 5, frequency: 247.0 },
+    { id: 6, frequency: 329.6 },
+  ],
+  id: "ESTANDARD_TUNING",
+};
 
-const openFTuning = [
-  { id: 1, frequency: 65.4 },
-  { id: 2, frequency: 87.4 },
-  { id: 3, frequency: 130.8 },
-  { id: 4, frequency: 174.6 },
-  { id: 5, frequency: 220.0 },
-  { id: 6, frequency: 349.2 },
-];
+const openFTuning = {
+  tuning: [
+    { id: 1, frequency: 65.4 },
+    { id: 2, frequency: 87.4 },
+    { id: 3, frequency: 130.8 },
+    { id: 4, frequency: 174.6 },
+    { id: 5, frequency: 220.0 },
+    { id: 6, frequency: 349.2 },
+  ],
+  id: "ESTANDARD_TUNING",
+};
 
-const openGTuning = [
-  { id: 1, frequency: 73.4 },
-  { id: 2, frequency: 98.0 },
-  { id: 3, frequency: 146.8 },
-  { id: 4, frequency: 196.0 },
-  { id: 5, frequency: 247.0 },
-  { id: 6, frequency: 293.6 },
-];
+const openGTuning = {
+  tuning: [
+    { id: 1, frequency: 73.4 },
+    { id: 2, frequency: 98.0 },
+    { id: 3, frequency: 146.8 },
+    { id: 4, frequency: 196.0 },
+    { id: 5, frequency: 247.0 },
+    { id: 6, frequency: 293.6 },
+  ],
+  id: "ESTANDARD_TUNING",
+};
 
-const DADGADTuning = [
-  { id: 1, frequency: 73.4 },
-  { id: 2, frequency: 110.0 },
-  { id: 3, frequency: 146.8 },
-  { id: 4, frequency: 196.0 },
-  { id: 5, frequency: 220.0 },
-  { id: 6, frequency: 293.6 },
-];
+const DADGADTuning = {
+  tuning: [
+    { id: 1, frequency: 73.4 },
+    { id: 2, frequency: 110.0 },
+    { id: 3, frequency: 146.8 },
+    { id: 4, frequency: 196.0 },
+    { id: 5, frequency: 220.0 },
+    { id: 6, frequency: 293.6 },
+  ],
+  id: "ESTANDARD_TUNING",
+};
 
 const freqTable = {
   A1: {

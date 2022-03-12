@@ -96,20 +96,24 @@ const GuitarContainer = React.memo(function GuitarContainer() {
         });
       case "RESET_STRINGS":
         console.log("reset");
-        return tuning;
+        return tuning.tuning;
       default:
         return state;
     }
   };
-  const [tuning, tuningDispatch] = React.useReducer(tuningReducer, [
-    ...eStandardTuning,
-  ]);
+  const [tuning, tuningDispatch] = React.useReducer(
+    tuningReducer,
+    eStandardTuning
+  );
 
-  const [strings, stringsDispatch] = React.useReducer(stringsReducer, tuning);
+  const [strings, stringsDispatch] = React.useReducer(
+    stringsReducer,
+    tuning.tuning
+  );
 
   return (
     <StringsProvider value={{ stringsDispatch, strings }}>
-      <TuningProvider value={{}}>
+      <TuningProvider value={{ tuningDispatch, tuning }}>
         <div className="guitarContainer">
           <Guitar />
           <UserInterface />
