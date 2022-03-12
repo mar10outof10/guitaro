@@ -363,4 +363,19 @@ const freqTable = {
   },
 };
 
-export { freqTable, eStandardTuning };
+export {
+  freqTable,
+  eStandardTuning,
+  ebStandardTuning,
+  dStandardTuning,
+  dropDTuning,
+  dropATuning,
+  openATuning,
+  openBTuning,
+  openCTuning,
+  openDTuning,
+  openETuning,
+  openFTuning,
+  openGTuning,
+  DADGADTuning,
+};

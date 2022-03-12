@@ -1,14 +1,62 @@
 import "./GuitarContainer.scss";
 import Guitar from "./Guitar/Guitar.js";
 import UserInterface from "./UserInterface/UserInterface.js";
-import { eStandardTuning, freqTable } from "../../assets/schema/constants";
+import {
+  eStandardTuning,
+  ebStandardTuning,
+  dStandardTuning,
+  dropDTuning,
+  dropATuning,
+  openATuning,
+  openBTuning,
+  openCTuning,
+  openDTuning,
+  openETuning,
+  openFTuning,
+  openGTuning,
+  DADGADTuning,
+  freqTable,
+} from "../../assets/schema/constants";
 import React from "react";
 
 import { StringsProvider, useStrings } from "../../hooks/stringsContext.js";
+import { TuningProvider, useTuning } from "../../hooks/tuningContext.js";
 
 const GuitarContainer = React.memo(function GuitarContainer() {
   console.log("gc rerender");
-  const initialStrings = [...eStandardTuning];
+
+  const tuningReducer = (state, action) => {
+    switch (action.type) {
+      case "ESTANDARD_TUNING":
+        return eStandardTuning;
+      case "EBSTANDARD_TUNING":
+        return ebStandardTuning;
+      case "DSTANDARD_TUNING":
+        return dStandardTuning;
+      case "DROPD_TUNING":
+        return dropDTuning;
+      case "DROPA_TUNING":
+        return dropATuning;
+      case "OPENA_TUNING":
+        return openATuning;
+      case "OPENB_TUNING":
+        return openBTuning;
+      case "OPENC_TUNING":
+        return openCTuning;
+      case "OPEND_TUNING":
+        return openDTuning;
+      case "OPENE_TUNING":
+        return openETuning;
+      case "OPENF_TUNING":
+        return openFTuning;
+      case "OPENG_TUNING":
+        return openGTuning;
+      case "DADGAD_TUNING":
+        return DADGADTuning;
+      default:
+        return state;
+    }
+  };
 
   const stringsReducer = (state, action) => {
     console.log("active");
@@ -46,24 +94,27 @@ const GuitarContainer = React.memo(function GuitarContainer() {
             return string;
           }
         });
-      case "RESET_STRINGS_ESTANDARD":
+      case "RESET_STRINGS":
         console.log("reset");
-        return initialStrings;
+        return tuning;
       default:
         return state;
     }
   };
-  const [strings, stringsDispatch] = React.useReducer(
-    stringsReducer,
-    initialStrings
-  );
+  const [tuning, tuningDispatch] = React.useReducer(tuningReducer, [
+    ...eStandardTuning,
+  ]);
+
+  const [strings, stringsDispatch] = React.useReducer(stringsReducer, tuning);
 
   return (
     <StringsProvider value={{ stringsDispatch, strings }}>
-      <div className="guitarContainer">
-        <Guitar />
-        <UserInterface />
-      </div>
+      <TuningProvider value={{}}>
+        <div className="guitarContainer">
+          <Guitar />
+          <UserInterface />
+        </div>
+      </TuningProvider>
     </StringsProvider>
   );
 });
