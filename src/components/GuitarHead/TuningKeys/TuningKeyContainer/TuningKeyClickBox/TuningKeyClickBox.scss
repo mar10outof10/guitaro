@@ -3,6 +3,7 @@
   width: 24px;
   position: absolute;
   cursor: grab;
+  z-index: 10;
 
   &__left {
     left: -2px;
@@ -10,15 +11,5 @@
 
   &__right {
     left: 140px;
-  }
-
-  &:first-child {
-    top: 0px;
-  }
-  &:nth-child(2) {
-    top: 50px;
-  }
-  &:nth-child(3) {
-    top: 100px;
   }
 }

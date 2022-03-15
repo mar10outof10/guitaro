@@ -1,19 +1,19 @@
 import "./TuningKeys.scss";
 import React from "react";
-import TuningKeyClickBox from "./TuningKeyClickBox/TuningKeyClickBox.js";
+import TuningKeyContainer from "./TuningKeyContainer/TuningKeyContainer.js";
 
 const TuningKeys = React.memo(function TuningKeys() {
   return (
     <div className="tuningKeys">
       <div className="tuningKeys__column">
-        <TuningKeyClickBox stringID={3} side="left"></TuningKeyClickBox>
-        <TuningKeyClickBox stringID={2} side="left"></TuningKeyClickBox>
-        <TuningKeyClickBox stringID={1} side="left"></TuningKeyClickBox>
+        <TuningKeyContainer stringID={3} side="left"></TuningKeyContainer>
+        <TuningKeyContainer stringID={2} side="left"></TuningKeyContainer>
+        <TuningKeyContainer stringID={1} side="left"></TuningKeyContainer>
       </div>
       <div className="tuningKeys__column">
-        <TuningKeyClickBox stringID={4} side="right"></TuningKeyClickBox>
-        <TuningKeyClickBox stringID={5} side="right"></TuningKeyClickBox>
-        <TuningKeyClickBox stringID={6} side="right"></TuningKeyClickBox>
+        <TuningKeyContainer stringID={4} side="right"></TuningKeyContainer>
+        <TuningKeyContainer stringID={5} side="right"></TuningKeyContainer>
+        <TuningKeyContainer stringID={6} side="right"></TuningKeyContainer>
       </div>
     </div>
   );

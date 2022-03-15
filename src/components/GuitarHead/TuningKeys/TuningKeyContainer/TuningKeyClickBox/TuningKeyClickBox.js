@@ -1,10 +1,9 @@
 import "./TuningKeyClickBox.scss";
-import TuningKey from "./TuningKey/TuningKey.js";
 
 import React from "react";
-import { useStrings } from "../../../../hooks/stringsContext";
+import { useStrings } from "../../../../../hooks/stringsContext";
 import PropTypes from "prop-types";
-import { initDrag, endDrag } from "../../../../utils/tuningFunctions";
+import { initDrag, endDrag } from "../../../../../utils/tuningFunctions";
 
 const TuningKeyClickBox = React.memo(function TuningKeyClickBox({
   stringID,
@@ -40,9 +39,7 @@ const TuningKeyClickBox = React.memo(function TuningKeyClickBox({
         setMouseY(event.clientY);
       }}
       onDragEnd={endDrag}
-    >
-      <TuningKey side={side}></TuningKey>
-    </div>
+    ></div>
   );
 });
 

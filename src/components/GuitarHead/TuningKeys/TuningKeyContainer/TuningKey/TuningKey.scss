@@ -1,9 +1,8 @@
 .tuningKey {
   position: relative;
-  width: 30.4px;
-  height: 25.8px;
+  width: 100%;
+  height: 100%;
   z-index: -1;
-  cursor: grab;
 
   &__left {
     background-image: url(~/src/assets/images/guitar/TuningKeyLeft.svg);
@@ -11,6 +10,5 @@
 
   &__right {
     background-image: url(~/src/assets/images/guitar/TuningKeyRight.svg);
-    left: -8px;
   }
 }

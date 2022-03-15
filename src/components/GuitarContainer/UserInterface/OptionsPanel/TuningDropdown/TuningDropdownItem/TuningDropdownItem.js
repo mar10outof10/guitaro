@@ -23,7 +23,7 @@ const TuningDropdownItem = ({ tuning, children }) => {
 
 TuningDropdownItem.propTypes = {
   tuning: PropTypes.string,
-  tuningDispatch: PropTypes.function,
+  tuningDispatch: PropTypes.func,
   children: PropTypes.node,
 };
 export default TuningDropdownItem;
