@@ -17,7 +17,7 @@ const ebStandardTuning = {
     { id: 3, frequency: 138.6 },
     { id: 4, frequency: 185.0 },
     { id: 5, frequency: 233.0 },
-    { id: 6, frequency: 311.2 },
+    { id: 6, frequency: 311.0 },
   ],
   id: "ESTANDARD_TUNING",
 };
@@ -166,7 +166,7 @@ const freqTable = {
     high: 60.01,
   },
   B1: {
-    freq: 61.74,
+    freq: 61.8,
     low: 60.01,
     high: 63.58,
   },

@@ -26,40 +26,41 @@ const GuitarContainer = React.memo(function GuitarContainer() {
   console.log("gc rerender");
 
   const tuningReducer = (state, action) => {
+    console.log("tuning reducer active type", action.type, state);
     switch (action.type) {
       case "ESTANDARD_TUNING":
-        return eStandardTuning;
+        return { ...eStandardTuning };
       case "EBSTANDARD_TUNING":
-        return ebStandardTuning;
+        return { ...ebStandardTuning };
       case "DSTANDARD_TUNING":
-        return dStandardTuning;
+        return { ...dStandardTuning };
       case "DROPD_TUNING":
-        return dropDTuning;
+        return { ...dropDTuning };
       case "DROPA_TUNING":
-        return dropATuning;
+        return { ...dropATuning };
       case "OPENA_TUNING":
-        return openATuning;
+        return { ...openATuning };
       case "OPENB_TUNING":
-        return openBTuning;
+        return { ...openBTuning };
       case "OPENC_TUNING":
-        return openCTuning;
+        return { ...openCTuning };
       case "OPEND_TUNING":
-        return openDTuning;
+        return { ...openDTuning };
       case "OPENE_TUNING":
-        return openETuning;
+        return { ...openETuning };
       case "OPENF_TUNING":
-        return openFTuning;
+        return { ...openFTuning };
       case "OPENG_TUNING":
-        return openGTuning;
+        return { ...openGTuning };
       case "DADGAD_TUNING":
-        return DADGADTuning;
+        return { ...DADGADTuning };
       default:
         return state;
     }
   };
 
   const stringsReducer = (state, action) => {
-    console.log("active");
+    console.log("strings reducer active");
     switch (action.type) {
       case "INCREASE_FREQUENCY":
         return state.map((string) => {
@@ -101,10 +102,9 @@ const GuitarContainer = React.memo(function GuitarContainer() {
         return state;
     }
   };
-  const [tuning, tuningDispatch] = React.useReducer(
-    tuningReducer,
-    eStandardTuning
-  );
+  const [tuning, tuningDispatch] = React.useReducer(tuningReducer, {
+    ...eStandardTuning,
+  });
 
   const [strings, stringsDispatch] = React.useReducer(
     stringsReducer,
