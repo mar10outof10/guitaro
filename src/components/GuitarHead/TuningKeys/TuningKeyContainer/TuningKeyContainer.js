@@ -8,10 +8,80 @@ const TuningKeyContainer = React.memo(function TuningKeyContainer({
   stringID,
   side,
 }) {
+  const initialPosition = parseFloat(Math.random().toFixed(2));
+  console.log(initialPosition, typeof initialPosition);
+
+  const positionReducer = (state, action) => {
+    switch (action.type) {
+      case "INITIALIZE_POSITION":
+        return {
+          reverse: false,
+          position: praseFloat(Math.random().toFixed(2)),
+        };
+      case "INCREASE_POSITION":
+        if (!state.reverse) {
+          if (state.position + 0.02 >= 1) {
+            return {
+              reverse: true,
+              position: state.position + 0.02,
+            };
+          }
+          return {
+            ...state,
+            position: state.position + 0.02,
+          };
+        }
+        if (state.position - 0.02 <= 0) {
+          return {
+            reverse: false,
+            position: state.position - 0.02,
+          };
+        }
+        return {
+          ...state,
+          position: state.position - 0.02,
+        };
+      case "DECREASE_POSITION":
+        if (!state.reverse) {
+          if (state.position - 0.02 <= 0) {
+            return {
+              reverse: true,
+              position: state.position - 0.02,
+            };
+          }
+          return {
+            ...state,
+            position: state.position - 0.02,
+          };
+        }
+        if (state.position + 0.02 >= 1) {
+          return {
+            reverse: false,
+            position: state.position + 0.02,
+          };
+        }
+        return {
+          ...state,
+          position: state.position + 0.02,
+        };
+      default:
+        return state;
+    }
+  };
+
+  const [position, positionDispatch] = React.useReducer(positionReducer, {
+    reverse: false,
+    position: initialPosition,
+  });
+
   return (
     <div className="tuningKeyContainer">
-      <TuningKeyClickBox side={side} stringID={stringID} />
-      <TuningKey side={side} />
+      <TuningKeyClickBox
+        positionDispatch={positionDispatch}
+        side={side}
+        stringID={stringID}
+      />
+      <TuningKey position={position.position} side={side} />
     </div>
   );
 });
@@ -22,3 +92,5 @@ TuningKeyContainer.propTypes = {
 };
 
 export default TuningKeyContainer;
+
+// 6.8opx

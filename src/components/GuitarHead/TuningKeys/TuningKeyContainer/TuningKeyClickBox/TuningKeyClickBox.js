@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import { initDrag, endDrag } from "../../../../../utils/tuningFunctions";
 
 const TuningKeyClickBox = React.memo(function TuningKeyClickBox({
+  positionDispatch,
   stringID,
   side,
 }) {
@@ -17,8 +18,10 @@ const TuningKeyClickBox = React.memo(function TuningKeyClickBox({
     event.preventDefault();
     if (event.clientY < mouseY) {
       stringsDispatch({ type: "INCREASE_FREQUENCY", id: stringID });
+      positionDispatch({ type: "INCREASE_POSITION" });
     } else if (event.clientY > mouseY) {
       stringsDispatch({ type: "DECREASE_FREQUENCY", id: stringID });
+      positionDispatch({ type: "DECREASE_POSITION" });
     }
   });
 
@@ -44,6 +47,7 @@ const TuningKeyClickBox = React.memo(function TuningKeyClickBox({
 });
 
 TuningKeyClickBox.propTypes = {
+  positionDispatch: PropTypes.number,
   stringID: PropTypes.number,
   side: PropTypes.string,
 };
