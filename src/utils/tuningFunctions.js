@@ -5,7 +5,6 @@ const dragNote = new Image();
 dragNote.src = NoteIcon;
 
 const initDrag = (event) => {
-  console.log("tKey dragStart");
   event.target.style.cursor = dragNote;
   event.dataTransfer.setDragImage(dragNote, 0, 20);
 };

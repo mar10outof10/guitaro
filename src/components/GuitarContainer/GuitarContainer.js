@@ -23,10 +23,7 @@ import { StringsProvider, useStrings } from "../../hooks/stringsContext.js";
 import { TuningProvider, useTuning } from "../../hooks/tuningContext.js";
 
 const GuitarContainer = React.memo(function GuitarContainer() {
-  console.log("gc rerender");
-
   const tuningReducer = (state, action) => {
-    console.log("tuning reducer active type", action.type, state);
     switch (action.type) {
       case "ESTANDARD_TUNING":
         return { ...eStandardTuning };
@@ -60,7 +57,6 @@ const GuitarContainer = React.memo(function GuitarContainer() {
   };
 
   const stringsReducer = (state, action) => {
-    console.log("strings reducer active");
     switch (action.type) {
       case "INCREASE_FREQUENCY":
         return state.map((string) => {
@@ -96,7 +92,6 @@ const GuitarContainer = React.memo(function GuitarContainer() {
           }
         });
       case "RESET_STRINGS":
-        console.log("reset");
         return tuning.tuning;
       default:
         return state;

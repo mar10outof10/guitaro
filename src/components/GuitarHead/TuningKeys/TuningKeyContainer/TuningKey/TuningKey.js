@@ -7,7 +7,7 @@ const TuningKey = React.memo(function TuningKey({ side, position }) {
 
   let remainder = position % 1;
 
-  const style = { height: `${remainder * 78 + 22}%` };
+  const style = { height: `${remainder * 88 + 12}%` };
 
   return <div className={tuningClasses} style={style}></div>;
 });

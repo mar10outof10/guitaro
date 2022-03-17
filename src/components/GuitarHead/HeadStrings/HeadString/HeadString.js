@@ -6,7 +6,7 @@ const HeadString = React.memo(function HeadString({ id }) {
   const headStringClass = `headString headString__${id}`;
 
   const hoverString = () => {
-    console.log(`Hovering string ${id}`);
+    console.log(`Hovering headstring ${id}`);
   };
   return (
     <img

@@ -53,14 +53,6 @@ const TuningAccuracyLight = function TuningAccuracyLight({
     }
   }, [accuracy]);
 
-  console.log(
-    freqTable[note].low,
-    lowRange,
-    mid,
-    freqTable[note].freq,
-    freqTable[note].high,
-    highRange
-  );
   return (
     <div
       className="tuningAccuracyLight"

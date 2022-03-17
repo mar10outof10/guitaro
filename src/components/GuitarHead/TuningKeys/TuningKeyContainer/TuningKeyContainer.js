@@ -9,7 +9,6 @@ const TuningKeyContainer = React.memo(function TuningKeyContainer({
   side,
 }) {
   const initialPosition = parseFloat(Math.random().toFixed(2));
-  console.log(initialPosition, typeof initialPosition);
 
   const positionReducer = (state, action) => {
     switch (action.type) {
@@ -20,49 +19,49 @@ const TuningKeyContainer = React.memo(function TuningKeyContainer({
         };
       case "INCREASE_POSITION":
         if (!state.reverse) {
-          if (state.position + 0.02 >= 1) {
+          if (state.position + 0.04 >= 1) {
             return {
               reverse: true,
-              position: state.position + 0.02,
+              position: state.position - 0.04,
             };
           }
           return {
             ...state,
-            position: state.position + 0.02,
+            position: state.position + 0.04,
           };
         }
-        if (state.position - 0.02 <= 0) {
+        if (state.position - 0.04 <= 0) {
           return {
             reverse: false,
-            position: state.position - 0.02,
+            position: state.position + 0.04,
           };
         }
         return {
           ...state,
-          position: state.position - 0.02,
+          position: state.position - 0.04,
         };
       case "DECREASE_POSITION":
         if (!state.reverse) {
-          if (state.position - 0.02 <= 0) {
+          if (state.position - 0.04 <= 0) {
             return {
               reverse: true,
-              position: state.position - 0.02,
+              position: state.position + 0.04,
             };
           }
           return {
             ...state,
-            position: state.position - 0.02,
+            position: state.position - 0.04,
           };
         }
-        if (state.position + 0.02 >= 1) {
+        if (state.position + 0.04 >= 1) {
           return {
             reverse: false,
-            position: state.position + 0.02,
+            position: state.position - 0.04,
           };
         }
         return {
           ...state,
-          position: state.position + 0.02,
+          position: state.position + 0.04,
         };
       default:
         return state;

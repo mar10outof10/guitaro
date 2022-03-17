@@ -12,7 +12,6 @@ const TuningKeyClickBox = React.memo(function TuningKeyClickBox({
 }) {
   const { stringsDispatch } = React.useCallback(useStrings());
   const [mouseY, setMouseY] = React.useState(0);
-  console.log("tkcb rerender");
 
   const dragCheck = React.useCallback((event) => {
     event.preventDefault();
@@ -47,7 +46,7 @@ const TuningKeyClickBox = React.memo(function TuningKeyClickBox({
 });
 
 TuningKeyClickBox.propTypes = {
-  positionDispatch: PropTypes.number,
+  positionDispatch: PropTypes.func,
   stringID: PropTypes.number,
   side: PropTypes.string,
 };
