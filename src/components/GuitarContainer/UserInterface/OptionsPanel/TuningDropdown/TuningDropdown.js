@@ -75,7 +75,7 @@ const TuningDropdown = () => {
       className="tuningDropdown"
       style={
         activeState.dropdownActive
-          ? { maxHeight: "235px" }
+          ? { maxHeight: "290px" }
           : { maxHeight: "20px" }
       }
     >
