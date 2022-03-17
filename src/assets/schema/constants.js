@@ -1,3 +1,19 @@
+const allTuning = [
+  { key: 1, tuning: "ESTANDARD_TUNING", dropdownBodyText: "E Standard" },
+  { key: 2, tuning: "EBSTANDARD_TUNING", dropdownBodyText: "Eb Standard" },
+  { key: 3, tuning: "DSTANDARD_TUNING", dropdownBodyText: "D Standard" },
+  { key: 4, tuning: "DROPD_TUNING", dropdownBodyText: "Drop D" },
+  { key: 5, tuning: "DROPA_TUNING", dropdownBodyText: "Drop A" },
+  { key: 6, tuning: "OPENA_TUNING", dropdownBodyText: "Open A" },
+  { key: 7, tuning: "OPENB_TUNING", dropdownBodyText: "Open B" },
+  { key: 8, tuning: "OPENC_TUNING", dropdownBodyText: "Open C" },
+  { key: 9, tuning: "OPEND_TUNING", dropdownBodyText: "Open D" },
+  { key: 10, tuning: "OPENE_TUNING", dropdownBodyText: "Open E" },
+  { key: 11, tuning: "OPENF_TUNING", dropdownBodyText: "Open F" },
+  { key: 12, tuning: "OPENG_TUNING", dropdownBodyText: "Open G" },
+  { key: 13, tuning: "DADGAD_TUNING", dropdownBodyText: "DADGAD" },
+];
+
 const eStandardTuning = {
   tuning: [
     { id: 1, frequency: 82.4 },
@@ -404,6 +420,7 @@ const freqTable = {
 
 export {
   freqTable,
+  allTuning,
   eStandardTuning,
   ebStandardTuning,
   dStandardTuning,

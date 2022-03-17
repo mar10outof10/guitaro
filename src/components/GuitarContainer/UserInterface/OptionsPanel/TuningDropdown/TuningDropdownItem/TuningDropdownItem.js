@@ -4,16 +4,28 @@ import PropTypes from "prop-types";
 import { useTuning } from "../../../../../../hooks/tuningContext";
 import { useStrings } from "../../../../../../hooks/stringsContext";
 
-const TuningDropdownItem = ({ tuning, children }) => {
+const TuningDropdownItem = ({
+  itemID,
+  tuning,
+  activeState,
+  dispatchActiveState,
+  children,
+}) => {
   const { tuningDispatch } = React.useCallback(useTuning());
   const { stringsDispatch } = React.useCallback(useStrings());
 
+  console.log("td item", activeState);
   return (
     <li
       className="tuningDropdownItem"
       onClick={async () => {
         await tuningDispatch({ type: tuning });
         stringsDispatch({ type: "RESET_STRINGS" });
+        dispatchActiveState(
+          activeState.dropdownActive
+            ? { type: "SET_STATE", key: itemID }
+            : { type: "TOGGLE_DROPDOWN" }
+        );
       }}
     >
       {children}
@@ -24,6 +36,9 @@ const TuningDropdownItem = ({ tuning, children }) => {
 TuningDropdownItem.propTypes = {
   tuning: PropTypes.string,
   tuningDispatch: PropTypes.func,
+  itemID: PropTypes.number,
+  activeState: PropTypes.object,
+  dispatchActiveState: PropTypes.func,
   children: PropTypes.node,
 };
 export default TuningDropdownItem;
