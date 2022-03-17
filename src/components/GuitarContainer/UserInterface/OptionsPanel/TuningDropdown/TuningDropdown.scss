@@ -1,2 +1,12 @@
 .tuningDropdown {
+  display: flex;
+  height: auto;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(335deg, #8d6213, #302207);
+  border: solid #3d2b09 3px;
+  transition: max-height 500ms ease 0ms;
+  overflow: hidden;
+  padding: 8px 4px;
+  border-radius: 10px;
 }

@@ -1,0 +1,13 @@
+.tuningDropdownItem {
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  border: solid 2px transparent;
+  color: skyblue;
+  cursor: pointer;
+
+  &:hover {
+    background: linear-gradient(155deg, #8d6213, #302207);
+    border-color: #714e0f;
+  }
+}

@@ -72,7 +72,14 @@ const TuningDropdown = () => {
   console.log(activeState);
 
   return (
-    <ul className="tuningDropdown">
+    <ul
+      className="tuningDropdown"
+      style={
+        activeState.dropdownActive
+          ? { "max-height": "235px" }
+          : { "max-height": "20px" }
+      }
+    >
       {activeState.dropdownActive ? (
         <TuningDropdownList
           activeState={activeState}
