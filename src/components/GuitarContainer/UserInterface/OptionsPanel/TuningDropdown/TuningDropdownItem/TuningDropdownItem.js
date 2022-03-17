@@ -14,7 +14,6 @@ const TuningDropdownItem = ({
   const { tuningDispatch } = React.useCallback(useTuning());
   const { stringsDispatch } = React.useCallback(useStrings());
 
-  console.log("td item", activeState);
   return (
     <li
       className="tuningDropdownItem"

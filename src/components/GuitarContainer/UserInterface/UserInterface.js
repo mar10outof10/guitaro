@@ -8,7 +8,6 @@ const UserInterface = React.memo(function UserInterface() {
     <section className="userInterface">
       <OptionsPanel />
       <StringsPanel />
-      <OptionsPanel />
     </section>
   );
 });

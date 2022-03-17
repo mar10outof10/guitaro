@@ -49,7 +49,6 @@ const TuningDropdown = () => {
   const activeReducer = (state, action) => {
     switch (action.type) {
       case "TOGGLE_DROPDOWN":
-        console.log("leg");
         return {
           ...state,
           dropdownActive: !state.dropdownActive,
@@ -76,8 +75,8 @@ const TuningDropdown = () => {
       className="tuningDropdown"
       style={
         activeState.dropdownActive
-          ? { "max-height": "235px" }
-          : { "max-height": "20px" }
+          ? { maxHeight: "235px" }
+          : { maxHeight: "20px" }
       }
     >
       {activeState.dropdownActive ? (
