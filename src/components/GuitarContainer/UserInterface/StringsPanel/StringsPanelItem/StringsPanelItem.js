@@ -3,6 +3,7 @@ import "./StringsPanelItem.scss";
 import { freqTable } from "../../../../../assets/schema/constants";
 import PropTypes from "prop-types";
 import TuningAccuracyLight from "./TuningAccuracyLight/TuningAccuracyLight";
+import StringLabel from "./StringLabel/StringLabel";
 
 const StringsPanelItem = React.memo(function StringsPanelItem({
   id,
@@ -24,7 +25,7 @@ const StringsPanelItem = React.memo(function StringsPanelItem({
 
   return (
     <li className="stringsPanelItem">
-      <div className="stringsPanelItem__stringID">{id}</div>
+      <StringLabel frequency={frequency}>{id}</StringLabel>
       <div className="stringsPanelItem__frequency">
         Frequency: {frequency}hz
       </div>
