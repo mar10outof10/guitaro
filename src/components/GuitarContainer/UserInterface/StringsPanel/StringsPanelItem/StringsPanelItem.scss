@@ -1,8 +1,9 @@
 .stringsPanelItem {
   display: flex;
-  gap: 20px;
+  width: 100%;
   text-align: start;
   align-items: center;
+  justify-content: space-between;
 
   &__stringID {
     width: 20px;

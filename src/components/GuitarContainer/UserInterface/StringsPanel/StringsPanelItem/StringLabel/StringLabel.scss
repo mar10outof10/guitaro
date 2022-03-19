@@ -1,9 +1,12 @@
 .stringLabel {
-  width: 20px;
+  width: 22px;
+  height: 22px;
   border: dotted 2px beige;
   border-radius: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   background: black;
   color: white;
+  cursor: pointer;
 }
