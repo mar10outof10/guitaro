@@ -1,30 +1,30 @@
 import React from "react";
 import "./TuningAccuracyLight.scss";
-import { freqTable } from "../../../../../../assets/schema/constants";
+import { freqTable } from "../../../../../../../assets/schema/constants";
 import PropTypes from "prop-types";
-import { useStrings } from "../../../../../../hooks/stringsContext";
+import { useStrings } from "../../../../../../../hooks/stringsContext";
 
 const TuningAccuracyLight = function TuningAccuracyLight({
   id,
-  note,
+  currentNote,
   frequency,
 }) {
-  const [lowRange, setLowRange] = React.useState(freqTable[note].low);
-  const [highRange, setHighRange] = React.useState(freqTable[note].high);
-  const [mid, setMid] = React.useState(freqTable[note].freq);
+  const [lowRange, setLowRange] = React.useState(freqTable[currentNote].low);
+  const [highRange, setHighRange] = React.useState(freqTable[currentNote].high);
+  const [mid, setMid] = React.useState(freqTable[currentNote].freq);
   const [accuracy, setAccuracy] = React.useState(100);
   const [style, setStyle] = React.useState();
 
   const { stringsDispatch } = useStrings();
 
   const setFreqToNote = () =>
-    stringsDispatch({ type: "SET_FREQUENCY_TO_NOTE", id, note });
+    stringsDispatch({ type: "SET_FREQUENCY_TO_NOTE", id, currentNote });
 
   React.useEffect(() => {
-    setMid(freqTable[note].freq);
-    setLowRange(freqTable[note].freq - freqTable[note].low);
-    setHighRange(freqTable[note].high - freqTable[note].freq);
-  }, [note]);
+    setMid(freqTable[currentNote].freq);
+    setLowRange(freqTable[currentNote].freq - freqTable[currentNote].low);
+    setHighRange(freqTable[currentNote].high - freqTable[currentNote].freq);
+  }, [currentNote]);
 
   React.useEffect(() => {
     if (frequency >= mid) {
@@ -65,7 +65,7 @@ const TuningAccuracyLight = function TuningAccuracyLight({
 TuningAccuracyLight.propTypes = {
   id: PropTypes.number,
   frequency: PropTypes.number,
-  note: PropTypes.string,
+  currentNote: PropTypes.string,
 };
 
 export default TuningAccuracyLight;
