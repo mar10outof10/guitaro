@@ -1,6 +1,5 @@
 import React from "react";
 import "./StringsPanelItem.scss";
-import { freqTable } from "../../../../../assets/schema/constants";
 import PropTypes from "prop-types";
 import StringLabel from "./StringLabel/StringLabel";
 import NoteContainer from "./NoteContainer/NoteContainer";

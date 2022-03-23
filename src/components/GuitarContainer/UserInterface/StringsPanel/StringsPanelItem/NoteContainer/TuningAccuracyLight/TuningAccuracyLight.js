@@ -18,7 +18,7 @@ const TuningAccuracyLight = function TuningAccuracyLight({
   const { stringsDispatch } = useStrings();
 
   const setFreqToNote = () =>
-    stringsDispatch({ type: "SET_FREQUENCY_TO_NOTE", id, currentNote });
+    stringsDispatch({ type: "SET_FREQUENCY_TO_NOTE", id, note: currentNote });
 
   React.useEffect(() => {
     setMid(freqTable[currentNote].freq);

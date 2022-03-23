@@ -1,12 +1,13 @@
 import React from "react";
 import "./NoteContainer.scss";
 import PropTypes from "prop-types";
-import { useStrings } from "../../../../../../hooks/stringsContext";
 import { freqTable } from "../../../../../../assets/schema/constants";
 import TuningAccuracyLight from "./TuningAccuracyLight/TuningAccuracyLight";
+import NoteDropdown from "./NoteDropdown/NoteDropdown";
 
 const NoteContainer = function NoteContainer({ id, frequency }) {
   const [currentNote, setcurrentNote] = React.useState();
+  const [dropdownState, setDropdownState] = React.useState("CLOSED");
 
   React.useEffect(() => {
     for (const note in freqTable) {
@@ -20,9 +21,23 @@ const NoteContainer = function NoteContainer({ id, frequency }) {
     }
   }, [frequency]);
 
+  const dropdownToggle = () => {
+    dropdownState === "CLOSED"
+      ? setDropdownState("OPEN")
+      : setDropdownState("CLOSED");
+    console.log(dropdownState);
+  };
+
   return (
     <div className="noteContainer">
-      <div className="noteContainer__noteDropdown">{currentNote}</div>
+      <div className="noteContainer__noteDropdown" onClick={dropdownToggle}>
+        {dropdownState === "OPEN" && (
+          <NoteDropdown currentNote={"ad"}></NoteDropdown>
+        )}
+        {dropdownState === "CLOSED" && (
+          <div className="noteContainer__currentNote">{currentNote}</div>
+        )}
+      </div>
       {currentNote && (
         <TuningAccuracyLight
           id={id}
