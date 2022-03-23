@@ -30,12 +30,17 @@ const NoteContainer = function NoteContainer({ id, frequency }) {
 
   return (
     <div className="noteContainer">
-      <div className="noteContainer__noteDropdown" onClick={dropdownToggle}>
+      <div onClick={dropdownToggle} className="noteContainer__noteDropdown">
         {dropdownState === "OPEN" && (
-          <NoteDropdown currentNote={"ad"}></NoteDropdown>
+          <NoteDropdown
+            currentNote={currentNote}
+            dropdownToggle={dropdownToggle}
+          ></NoteDropdown>
         )}
         {dropdownState === "CLOSED" && (
-          <div className="noteContainer__currentNote">{currentNote}</div>
+          <div className="noteContainer__currentNote" onClick={dropdownToggle}>
+            {currentNote}
+          </div>
         )}
       </div>
       {currentNote && (

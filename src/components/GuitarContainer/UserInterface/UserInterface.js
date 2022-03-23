@@ -7,9 +7,9 @@ import TopOptionsPanel from "./TopOptionsPanel/TopOptionsPanel";
 const UserInterface = React.memo(function UserInterface() {
   return (
     <section className="userInterface">
+      <OptionsPanel />
       <TopOptionsPanel />
       <StringsPanel />
-      <OptionsPanel />
     </section>
   );
 });

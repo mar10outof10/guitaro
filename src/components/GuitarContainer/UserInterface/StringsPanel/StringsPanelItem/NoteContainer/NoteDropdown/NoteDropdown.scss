@@ -1,2 +1,43 @@
 .noteDropdown {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 75px;
+  height: 195px;
+  gap: 15px;
+
+  position: relative;
+  left: -30px;
+  top: -30px;
+
+  background: linear-gradient(335deg, #8d6213, #302207);
+  border: solid #3d2b09 3px;
+  border-radius: 25px;
+  transition: max-height 500ms cubic-bezier(0.4, -1, 0.54, -0.08) 0ms;
+
+  &__noteColumn {
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__noteColumnItem {
+  }
+
+  &__octaveColumn {
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  &__octaveColumnItem {
+  }
 }

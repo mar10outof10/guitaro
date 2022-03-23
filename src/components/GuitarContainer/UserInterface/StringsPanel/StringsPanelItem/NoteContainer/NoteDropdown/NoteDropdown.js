@@ -4,29 +4,27 @@ import { freqTable } from "../../../../../../../assets/schema/constants";
 import PropTypes from "prop-types";
 import { useStrings } from "../../../../../../../hooks/stringsContext";
 
-const NoteDropdown = function NoteDropdown({ currentNote }) {
-  const notes = [
-    "Ab",
-    "A",
-    "Bb",
-    "B",
-    "C",
-    "Db",
-    "D",
-    "Eb",
-    "E",
-    "F",
-    "Gb",
-    "G",
-  ];
+const NoteDropdown = function NoteDropdown({ currentNote, dropdownToggle }) {
+  const notes = ["Ab", "Bb", "C", "Db", "Eb", "F", "Gb"];
   const octaves = [1, 2, 3, 4, 5];
+
+  const currNote = currentNote.slice(0, -1);
+  const currOctave = currentNote.slice(-1);
+
+  console.log(currNote, currOctave);
 
   const NoteColumn = () => {
     return (
       <div className="noteDropdown__noteColumn">
         {notes.map((note, index) => (
           <div key={index} className="noteDropdown__noteColumnItem">
-            {note}
+            {note === currNote ? (
+              <span className="noteDropdown__noteColumnItemCurrent">
+                {note}
+              </span>
+            ) : (
+              note
+            )}
           </div>
         ))}
       </div>
@@ -35,12 +33,12 @@ const NoteDropdown = function NoteDropdown({ currentNote }) {
 
   const OctaveColumn = () => {
     return (
-      <div className="octaveDropdown__octaveColumn">
-        {octaves.map((octave, index) => {
+      <div className="noteDropdown__octaveColumn">
+        {octaves.map((octave, index) => (
           <div key={index} className="octaveDropdown__octaveColumnItem">
             {octave}
-          </div>;
-        })}
+          </div>
+        ))}
       </div>
     );
   };
@@ -55,6 +53,7 @@ const NoteDropdown = function NoteDropdown({ currentNote }) {
 
 NoteDropdown.propTypes = {
   currentNote: PropTypes.string,
+  dropdownToggle: PropTypes.func,
 };
 
 export default NoteDropdown;
