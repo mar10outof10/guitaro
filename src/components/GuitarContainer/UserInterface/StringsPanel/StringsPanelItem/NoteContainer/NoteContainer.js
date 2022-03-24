@@ -35,6 +35,7 @@ const NoteContainer = function NoteContainer({ id, frequency }) {
           <NoteDropdown
             currentNote={currentNote}
             dropdownToggle={dropdownToggle}
+            id={id}
           ></NoteDropdown>
         )}
         {dropdownState === "CLOSED" && (
