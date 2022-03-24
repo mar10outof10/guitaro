@@ -30,7 +30,7 @@ const NoteContainer = function NoteContainer({ id, frequency }) {
 
   return (
     <div className="noteContainer">
-      <div onClick={dropdownToggle} className="noteContainer__noteDropdown">
+      <div className="noteContainer__noteDropdown">
         {dropdownState === "OPEN" && (
           <NoteDropdown
             currentNote={currentNote}
