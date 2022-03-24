@@ -1,5 +1,13 @@
 .noteDropdownItem {
+  display: flex;
+  height: 18.4px;
+
+  sup {
+    position: relative;
+    top: -5px;
+  }
+
   &__current {
-    color: red;
+    color: goldenrod;
   }
 }

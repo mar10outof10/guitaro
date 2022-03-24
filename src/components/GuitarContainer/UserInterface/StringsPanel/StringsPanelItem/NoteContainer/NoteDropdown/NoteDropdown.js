@@ -24,6 +24,7 @@ const NoteDropdown = function NoteDropdown({
   const noteDropdownReducer = (state, action) => {
     switch (action.type) {
       case "TOGGLE_PROPERTY":
+        console.log(state);
         return {
           ...state,
           [action.property]:
@@ -37,19 +38,35 @@ const NoteDropdown = function NoteDropdown({
   const [noteDropdownState, noteDropdownDispatch] = React.useReducer(
     noteDropdownReducer,
     {
-      note: "",
-      flat: "",
-      octave: "",
+      note: null,
+      octave: null,
     }
   );
 
-  React.useEffect(() => {}, [noteDropdownState]);
+  console.log(noteDropdownState);
+
+  React.useEffect(() => {
+    if (noteDropdownState.note && noteDropdownState.octave) {
+      console.log("ahh");
+      stringsDispatch({
+        type: "SET_FREQUENCY_TO_NOTE",
+        id,
+        note: `${noteDropdownState.note}${noteDropdownState.octave}`,
+      });
+      dropdownToggle();
+    }
+  }, [noteDropdownState]);
 
   const NoteColumn = () => {
     return (
       <div className="noteDropdown__noteColumn">
         {notes.map((note, index) => (
-          <NoteDropdownItem key={index} note={note} currentNote={currNote} />
+          <NoteDropdownItem
+            key={index}
+            note={note}
+            currentNote={currNote}
+            noteDropdownDispatch={noteDropdownDispatch}
+          />
         ))}
       </div>
     );
@@ -59,7 +76,17 @@ const NoteDropdown = function NoteDropdown({
     return (
       <div className="noteDropdown__octaveColumn">
         {octaves.map((octave, index) => (
-          <div key={index} className="noteDropdown__octaveColumnItem">
+          <div
+            key={index}
+            className="noteDropdown__octaveColumnItem"
+            onClick={() =>
+              noteDropdownDispatch({
+                type: "TOGGLE_PROPERTY",
+                property: "octave",
+                payload: octave,
+              })
+            }
+          >
             {octave === currOctave ? (
               <span className="noteDropdown__octaveColumnItemCurrent">
                 {octave}
