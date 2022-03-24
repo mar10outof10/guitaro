@@ -11,7 +11,7 @@ const NoteDropdown = function NoteDropdown({
   id,
 }) {
   const notes = ["Ab", "Bb", "C", "Db", "Eb", "F", "Gb"];
-  const octaves = [1, 2, 3, 4, 5];
+  const octaves = ["1", "2", "3", "4", "5"];
 
   const { stringsDispatch } = React.useCallback(useStrings());
 
@@ -58,8 +58,14 @@ const NoteDropdown = function NoteDropdown({
     return (
       <div className="noteDropdown__octaveColumn">
         {octaves.map((octave, index) => (
-          <div key={index} className="octaveDropdown__octaveColumnItem">
-            {octave}
+          <div key={index} className="noteDropdown__octaveColumnItem">
+            {octave === currOctave ? (
+              <span className="noteDropdown__octaveColumnItemCurrent">
+                {octave}
+              </span>
+            ) : (
+              <React.Fragment>{octave}</React.Fragment>
+            )}
           </div>
         ))}
       </div>

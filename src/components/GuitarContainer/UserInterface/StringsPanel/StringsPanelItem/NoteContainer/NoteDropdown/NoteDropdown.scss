@@ -28,16 +28,6 @@
     align-items: center;
   }
 
-  &__noteColumnItem {
-    &Current {
-      color: red;
-    }
-
-    &__selected {
-      color: gold;
-    }
-  }
-
   &__octaveColumn {
     height: 65%;
     display: flex;
@@ -47,6 +37,7 @@
 
   &__octaveColumnItem {
     &Current {
+      color: red;
     }
   }
 }
