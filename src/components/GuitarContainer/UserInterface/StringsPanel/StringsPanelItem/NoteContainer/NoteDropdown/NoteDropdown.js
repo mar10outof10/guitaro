@@ -3,7 +3,7 @@ import "./NoteDropdown.scss";
 import { freqTable } from "../../../../../../../assets/schema/constants";
 import PropTypes from "prop-types";
 import { useStrings } from "../../../../../../../hooks/stringsContext";
-import OutsideAlerter from "../../../../../../../hooks/outsideAlerter";
+import OutsideTrigger from "../../../../../../../hooks/outsideTrigger";
 import NoteDropdownItem from "./NoteDropdownItem/NoteDropdownItem";
 
 const NoteDropdown = function NoteDropdown({
@@ -101,12 +101,12 @@ const NoteDropdown = function NoteDropdown({
   };
 
   return (
-    <OutsideAlerter callback={() => dropdownToggle()}>
+    <OutsideTrigger callback={() => dropdownToggle()}>
       <div className="noteDropdown">
         <NoteColumn />
         <OctaveColumn />
       </div>
-    </OutsideAlerter>
+    </OutsideTrigger>
   );
 };
 
