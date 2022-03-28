@@ -65,6 +65,7 @@ const NoteDropdown = function NoteDropdown({
             key={index}
             note={note}
             currentNote={currNote}
+            selectedNote={noteDropdownState.note}
             noteDropdownDispatch={noteDropdownDispatch}
           />
         ))}

@@ -6,6 +6,15 @@
   align-items: center;
   justify-content: center;
 
+  &__note {
+    margin-right: 2px;
+    z-index: 20;
+  }
+
+  &__flat {
+    z-index: 20;
+  }
+
   sup {
     position: relative;
     top: -5px;
@@ -15,10 +24,23 @@
     color: goldenrod;
   }
 
-  &__border {
+  &__selected,
+  &__selectedFlat {
     position: absolute;
-    border: solid black 1px;
+    border: solid goldenrod 2px;
+    border-radius: 5px;
+    z-index: 10;
+  }
+
+  &__selected {
     height: 100%;
+    width: 11px;
+    left: -2px;
+  }
+
+  &__selectedFlat {
+    height: 125%;
     width: 100%;
+    bottom: -2px;
   }
 }

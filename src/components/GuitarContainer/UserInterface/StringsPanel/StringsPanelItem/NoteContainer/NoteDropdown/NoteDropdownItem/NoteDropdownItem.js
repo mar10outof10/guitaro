@@ -7,6 +7,7 @@ import { useStrings } from "../../../../../../../../hooks/stringsContext";
 const NoteDropdownItem = function NoteDropdownItem({
   note,
   currentNote,
+  selectedNote,
   noteDropdownDispatch,
 }) {
   const isFlat = note.length === 2 ? true : false;
@@ -29,7 +30,17 @@ const NoteDropdownItem = function NoteDropdownItem({
 
   return (
     <div className="noteDropdownItem" onClick={noteDropdownDispatch}>
+      {selectedNote && note[0] === selectedNote[0] ? (
+        <div
+          className={
+            selectedNote.length === 2
+              ? "noteDropdownItem__selectedFlat"
+              : "noteDropdownItem__selected"
+          }
+        ></div>
+      ) : null}
       <div
+        className="noteDropdownItem__note"
         onClick={() =>
           noteDropdownDispatch({
             type: "TOGGLE_PROPERTY",
@@ -41,6 +52,7 @@ const NoteDropdownItem = function NoteDropdownItem({
         <Note />
       </div>
       <div
+        className="noteDropdownItem__flat"
         onClick={() =>
           noteDropdownDispatch({
             type: "TOGGLE_PROPERTY",
@@ -58,7 +70,7 @@ const NoteDropdownItem = function NoteDropdownItem({
 NoteDropdownItem.propTypes = {
   note: PropTypes.string,
   currentNote: PropTypes.string,
-  dropdownToggle: PropTypes.func,
+  selectedNote: PropTypes.string,
   noteDropdownDispatch: PropTypes.func,
 };
 
