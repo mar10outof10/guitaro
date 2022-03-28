@@ -28,7 +28,7 @@ const NoteDropdown = function NoteDropdown({
         return {
           ...state,
           [action.property]:
-            state[action.property] === action.payload ? "" : action.payload,
+            state[action.property] === action.payload ? null : action.payload,
         };
       default:
         return state;
