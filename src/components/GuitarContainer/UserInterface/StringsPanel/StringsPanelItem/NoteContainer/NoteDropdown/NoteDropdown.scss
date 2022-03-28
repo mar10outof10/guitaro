@@ -36,8 +36,21 @@
   }
 
   &__octaveColumnItem {
-    &Current {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__current {
       color: goldenrod;
+    }
+
+    &__border {
+      position: absolute;
+      border: solid goldenrod 2px;
+      height: 100%;
+      width: 100%;
+      border-radius: 5px;
     }
   }
 }

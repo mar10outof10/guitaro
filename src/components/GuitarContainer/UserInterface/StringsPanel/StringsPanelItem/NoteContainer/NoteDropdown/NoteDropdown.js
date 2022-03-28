@@ -87,8 +87,11 @@ const NoteDropdown = function NoteDropdown({
               })
             }
           >
+            {octave === noteDropdownState.octave ? (
+              <span className="noteDropdown__octaveColumnItem__border"></span>
+            ) : null}
             {octave === currOctave ? (
-              <span className="noteDropdown__octaveColumnItemCurrent">
+              <span className="noteDropdown__octaveColumnItem__current">
                 {octave}
               </span>
             ) : (
