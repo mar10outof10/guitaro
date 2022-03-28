@@ -82,7 +82,7 @@ const GuitarContainer = React.memo(function GuitarContainer() {
         });
       case "SET_FREQUENCY_TO_NOTE":
         return state.map((string) => {
-          if (string.id === action.id) {
+          if (string.id === action.id && freqTable[action.note]) {
             return {
               ...string,
               frequency: freqTable[action.note].freq,
