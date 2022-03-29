@@ -2,6 +2,7 @@ import "./UserInterface.scss";
 import React from "react";
 import StringsPanel from "./StringsPanel/StringsPanel";
 import OptionsPanel from "./OptionsPanel/OptionsPanel";
+import ResetPanel from "./ResetPanel/ResetPanel";
 import TopOptionsPanel from "./TopOptionsPanel/TopOptionsPanel";
 
 const UserInterface = React.memo(function UserInterface() {
@@ -10,6 +11,7 @@ const UserInterface = React.memo(function UserInterface() {
       <OptionsPanel />
       <TopOptionsPanel />
       <StringsPanel />
+      <ResetPanel />
     </section>
   );
 });

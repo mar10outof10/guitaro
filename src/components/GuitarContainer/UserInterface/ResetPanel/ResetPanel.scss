@@ -1,0 +1,16 @@
+.resetPanel {
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  color: paleturquoise;
+  background: black;
+  border: outset white 5px;
+
+  &:active {
+    border-style: inset;
+    border-color: rgb(86, 86, 86);
+    background: rgb(60, 60, 60);
+    color: turquoise;
+  }
+}
