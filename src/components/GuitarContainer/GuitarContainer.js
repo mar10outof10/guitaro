@@ -1,6 +1,7 @@
 import "./GuitarContainer.scss";
 import Guitar from "./Guitar/Guitar.js";
 import UserInterface from "./UserInterface/UserInterface.js";
+import HelpOverlay from "./HelpOverlay/HelpOverlay.js";
 import {
   eStandardTuning,
   ebStandardTuning,
@@ -21,6 +22,7 @@ import React from "react";
 
 import { StringsProvider, useStrings } from "../../hooks/stringsContext.js";
 import { TuningProvider, useTuning } from "../../hooks/tuningContext.js";
+import { OverlayProvider, useOverlay } from "../../hooks/overlayContext.js";
 
 const GuitarContainer = React.memo(function GuitarContainer() {
   const tuningReducer = (state, action) => {
@@ -97,6 +99,16 @@ const GuitarContainer = React.memo(function GuitarContainer() {
         return state;
     }
   };
+
+  const overlayReducer = (state, action) => {
+    switch (aciton.type) {
+      case "TOGGLE_OVERLAY":
+        return !state;
+      default:
+        return state;
+    }
+  };
+
   const [tuning, tuningDispatch] = React.useReducer(tuningReducer, {
     ...eStandardTuning,
   });
@@ -106,13 +118,18 @@ const GuitarContainer = React.memo(function GuitarContainer() {
     tuning.tuning
   );
 
+  const [overlay, overlayDispatch] = React.useReducer(overlayReducer, true);
+
   return (
     <StringsProvider value={{ stringsDispatch, strings }}>
       <TuningProvider value={{ tuningDispatch, tuning }}>
-        <div className="guitarContainer">
-          <Guitar />
-          <UserInterface />
-        </div>
+        <OverlayProvider value={{ overlayDispatch, overlay }}>
+          <div className="guitarContainer">
+            <Guitar />
+            <UserInterface />
+            <HelpOverlay />
+          </div>
+        </OverlayProvider>
       </TuningProvider>
     </StringsProvider>
   );
