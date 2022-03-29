@@ -5,7 +5,7 @@ import { useOverlay } from "../../../hooks/overlayContext";
 const HelpOverlay = function HelpOverlay() {
   const { overlay } = useOverlay();
 
-  return <div className="helpOverlay">{overlay && <div></div>}</div>;
+  return <div className="helpOverlay">{overlay && <div>active</div>}</div>;
 };
 
 export default HelpOverlay;

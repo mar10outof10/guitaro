@@ -101,7 +101,7 @@ const GuitarContainer = React.memo(function GuitarContainer() {
   };
 
   const overlayReducer = (state, action) => {
-    switch (aciton.type) {
+    switch (action.type) {
       case "TOGGLE_OVERLAY":
         return !state;
       default:
