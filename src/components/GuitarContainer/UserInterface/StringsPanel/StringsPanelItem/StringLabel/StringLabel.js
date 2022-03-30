@@ -6,7 +6,10 @@ import { playFrequency } from "../../../../../../utils/audioFunctions";
 
 const StringLabel = function StringLabel({ frequency, children }) {
   return (
-    <button className="stringLabel" onClick={() => playFrequency(frequency)}>
+    <button
+      className="stringLabel"
+      onMouseDown={() => playFrequency(frequency)}
+    >
       {children}
     </button>
   );

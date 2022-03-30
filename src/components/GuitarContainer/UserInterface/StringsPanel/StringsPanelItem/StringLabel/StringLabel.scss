@@ -9,4 +9,10 @@
   background: black;
   color: white;
   cursor: pointer;
+
+  &:active {
+    color: black;
+    background: beige;
+    border-color: black;
+  }
 }
