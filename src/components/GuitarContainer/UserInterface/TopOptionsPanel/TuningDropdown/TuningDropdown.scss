@@ -1,7 +1,7 @@
 .tuningDropdown {
+  height: 160px;
   display: flex;
   flex-flow: column wrap;
-  height: auto;
   align-items: center;
   background: linear-gradient(335deg, #8d6213, #302207);
   border: solid #3d2b09 3px;
@@ -10,4 +10,14 @@
   padding: 2px 4px;
   border-radius: 10px;
   white-space: nowrap;
+  z-index: 10;
+
+  &__text {
+    color: white;
+    position: absolute;
+    top: 30px;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: cursive;
+  }
 }

@@ -96,7 +96,7 @@ const NoteDropdown = function NoteDropdown({
                 {octave}
               </span>
             ) : (
-              <React.Fragment>{octave}</React.Fragment>
+              <>{octave}</>
             )}
           </div>
         ))}

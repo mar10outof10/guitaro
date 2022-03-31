@@ -25,7 +25,7 @@ const NoteDropdownItem = function NoteDropdownItem({
     isCurrentNote ? (
       <span className="noteDropdownItem__current">{note[0]}</span>
     ) : (
-      <React.Fragment>{note[0]}</React.Fragment>
+      <>{note[0]}</>
     );
 
   return (

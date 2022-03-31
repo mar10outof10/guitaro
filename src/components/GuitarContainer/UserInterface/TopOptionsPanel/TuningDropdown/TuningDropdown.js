@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 
 const TuningDropdownList = ({ activeState, dispatchActiveState }) => {
   return (
-    <React.Fragment>
+    <>
       {allTuning.map((tuning) => (
         <TuningDropdownItem
           key={tuning.key}
@@ -19,7 +19,7 @@ const TuningDropdownList = ({ activeState, dispatchActiveState }) => {
           {tuning.dropdownBodyText}
         </TuningDropdownItem>
       ))}
-    </React.Fragment>
+    </>
   );
 };
 
@@ -27,9 +27,8 @@ const TuningActive = ({ activeState, dispatchActiveState }) => {
   const { key, tuning, dropdownBodyText } = allTuning.find(
     (target) => target.key === activeState.activeKey
   );
-  console.log("activerow", activeState);
   return (
-    <React.Fragment>
+    <>
       <TuningDropdownItem
         key={key}
         itemID={tuning.key}
@@ -39,7 +38,7 @@ const TuningActive = ({ activeState, dispatchActiveState }) => {
       >
         {dropdownBodyText}
       </TuningDropdownItem>
-    </React.Fragment>
+    </>
   );
 };
 
@@ -68,29 +67,32 @@ const TuningDropdown = () => {
     dropdownActive: false,
   });
 
-  console.log(activeState);
-
   return (
-    <ul
-      className="tuningDropdown"
-      style={
-        activeState.dropdownActive
-          ? { maxHeight: "160px", width: "200px" }
-          : { maxHeight: "22px" }
-      }
-    >
-      {activeState.dropdownActive ? (
-        <TuningDropdownList
-          activeState={activeState}
-          dispatchActiveState={dispatchActiveState}
-        />
-      ) : (
-        <TuningActive
-          activeState={activeState}
-          dispatchActiveState={dispatchActiveState}
-        />
-      )}
-    </ul>
+    <>
+      <div className="tuningDropdown__text">Tuning</div>
+      <ul
+        className="tuningDropdown"
+        style={
+          activeState.dropdownActive
+            ? { maxHeight: "160px", width: "200px" }
+            : { maxHeight: "22px", justifyContent: "center" }
+        }
+      >
+        {activeState.dropdownActive ? (
+          <TuningDropdownList
+            activeState={activeState}
+            dispatchActiveState={dispatchActiveState}
+          />
+        ) : (
+          <>
+            <TuningActive
+              activeState={activeState}
+              dispatchActiveState={dispatchActiveState}
+            />
+          </>
+        )}
+      </ul>
+    </>
   );
 };
 
