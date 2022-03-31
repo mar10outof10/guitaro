@@ -8,10 +8,20 @@ const HelpOverlayToggle = () => {
     overlay ? "__active" : "__inactive"
   }`;
 
+  const handleOnMouseDown = (e) => {
+    e.preventDefault();
+    overlayDispatch({ type: "TOGGLE_OVERLAY" });
+  };
+
+  const disableDefault = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <button
       className={buttonClassname}
-      onClick={() => overlayDispatch({ type: "TOGGLE_OVERLAY" })}
+      onMouseDown={handleOnMouseDown}
+      onFocus={disableDefault}
     >
       <span className="helpOverlayToggle__text">?{overlay}</span>
     </button>
