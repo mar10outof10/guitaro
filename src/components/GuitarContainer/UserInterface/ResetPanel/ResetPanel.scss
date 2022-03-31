@@ -3,9 +3,13 @@
   height: 50px;
   justify-content: center;
   align-items: center;
-  color: paleturquoise;
+  color: antiquewhite;
   background: black;
-  border: outset white 5px;
+  border: outset antiquewhite 5px;
+  font-family: cursive;
+  font-size: 30px;
+  letter-spacing: 4px;
+  font-weight: 800;
 
   &:active {
     border-style: inset;
