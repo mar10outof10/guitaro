@@ -2,13 +2,18 @@ import "./HelpOverlayToggle.scss";
 import { useOverlay } from "../../../../../hooks/overlayContext";
 
 const HelpOverlayToggle = () => {
-  const { overlayDispatch } = useOverlay();
+  const { overlay, overlayDispatch } = useOverlay();
+
+  const buttonClassname = `helpOverlayToggle helpOverlayToggle${
+    overlay ? "__active" : "__inactive"
+  }`;
+
   return (
     <button
-      className="helpOverlayToggle"
+      className={buttonClassname}
       onClick={() => overlayDispatch({ type: "TOGGLE_OVERLAY" })}
     >
-      {/* <img src={require()} alt="gear help icon" onClick={toggleHelpOverlay} */}
+      <span className="helpOverlayToggle__text">?{overlay}</span>
     </button>
   );
 };
