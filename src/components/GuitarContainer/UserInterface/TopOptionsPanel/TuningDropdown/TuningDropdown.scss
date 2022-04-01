@@ -1,22 +1,37 @@
 .tuningDropdown {
-  height: 160px;
   display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-  background: linear-gradient(335deg, #8d6213, #302207);
-  border: solid #3d2b09 3px;
-  transition: max-height 500ms cubic-bezier(0.4, -1, 0.54, -0.08) 0ms;
-  overflow: hidden;
-  padding: 2px 4px;
-  border-radius: 10px;
-  white-space: nowrap;
-  z-index: 10;
+  justify-content: center;
+
+  &__dropdown {
+    height: 160px;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    background: linear-gradient(335deg, #8d6213, #302207);
+    border: solid #3d2b09 3px;
+    transition: max-height 500ms cubic-bezier(0.4, -1, 0.54, -0.08) 0ms;
+    overflow: hidden;
+    padding: 2px 4px;
+    border-radius: 10px;
+    white-space: nowrap;
+    z-index: 10;
+
+    &__active {
+      max-height: 160px;
+      width: 200px;
+    }
+
+    &__inactive {
+      max-height: 22px;
+      justify-content: center;
+    }
+  }
 
   &__text {
     color: white;
     position: absolute;
-    top: 30px;
-    font-size: 30px;
+    top: 25px;
+    font-size: 34px;
     font-weight: 600;
     font-family: cursive;
   }

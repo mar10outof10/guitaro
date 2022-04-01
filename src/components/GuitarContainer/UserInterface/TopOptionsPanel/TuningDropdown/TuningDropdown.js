@@ -67,17 +67,14 @@ const TuningDropdown = () => {
     dropdownActive: false,
   });
 
+  const dropdownClassName = `tuningDropdown__dropdown tuningDropdown__dropdown__${
+    activeState.dropdownActive ? "active" : "inactive"
+  }`;
+
   return (
-    <>
+    <div className="tuningDropdown">
       <div className="tuningDropdown__text">Tuning</div>
-      <ul
-        className="tuningDropdown"
-        style={
-          activeState.dropdownActive
-            ? { maxHeight: "160px", width: "200px" }
-            : { maxHeight: "22px", justifyContent: "center" }
-        }
-      >
+      <ul className={dropdownClassName}>
         {activeState.dropdownActive ? (
           <TuningDropdownList
             activeState={activeState}
@@ -92,7 +89,7 @@ const TuningDropdown = () => {
           </>
         )}
       </ul>
-    </>
+    </div>
   );
 };
 
