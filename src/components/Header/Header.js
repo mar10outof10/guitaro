@@ -11,7 +11,6 @@ const Header = React.memo(function Header() {
           src={require("../../assets/images/guitaro_logo_header.png")}
         ></img>
       </div>
-      <div className="header_label">{`I'm a header :-)`}</div>
       <HeaderOptions />
     </header>
   );

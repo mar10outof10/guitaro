@@ -16,6 +16,7 @@ const TuningDropdownList = ({ activeState, dispatchActiveState }) => {
           activeState={activeState}
           dispatchActiveState={dispatchActiveState}
           tuning={tuning.tuning}
+          currentlyActive={activeState.activeKey === tuning.key}
         >
           {tuning.dropdownBodyText}
         </TuningDropdownItem>

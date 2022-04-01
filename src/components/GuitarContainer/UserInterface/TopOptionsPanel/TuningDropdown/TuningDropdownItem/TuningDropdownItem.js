@@ -8,25 +8,29 @@ const TuningDropdownItem = ({
   itemID,
   tuning,
   activeState,
+  currentlyActive,
   dispatchActiveState,
   children,
 }) => {
   const { tuningDispatch } = React.useCallback(useTuning());
   const { stringsDispatch } = React.useCallback(useStrings());
 
-  return (
-    <li
-      className="tuningDropdownItem"
-      onClick={async () => {
+  const tuningClassName = `tuningDropdownItem ${
+    currentlyActive ? "tuningDropdownItem__active" : null
+  }`;
+
+  const onClick = activeState.dropdownActive
+    ? async () => {
         await tuningDispatch({ type: tuning });
         stringsDispatch({ type: "RESET_STRINGS" });
-        dispatchActiveState(
-          activeState.dropdownActive
-            ? { type: "SET_STATE", key: itemID }
-            : { type: "TOGGLE_DROPDOWN" }
-        );
-      }}
-    >
+        dispatchActiveState({ type: "SET_STATE", key: itemID });
+      }
+    : () => {
+        dispatchActiveState({ type: "TOGGLE_DROPDOWN" });
+      };
+
+  return (
+    <li className={tuningClassName} onClick={onClick}>
       {children}
     </li>
   );
@@ -37,6 +41,7 @@ TuningDropdownItem.propTypes = {
   tuningDispatch: PropTypes.func,
   itemID: PropTypes.number,
   activeState: PropTypes.object,
+  currentlyActive: PropTypes.bool,
   dispatchActiveState: PropTypes.func,
   children: PropTypes.node,
 };
