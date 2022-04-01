@@ -1,13 +1,14 @@
 import "./TuningDropdown.scss";
 import React from "react";
 import TuningDropdownItem from "./TuningDropdownItem/TuningDropdownItem";
+import OutsideTrigger from "../../../../../hooks/outsideTrigger";
 import { useTuning } from "../../../../../hooks/tuningContext";
 import { allTuning } from "../../../../../assets/schema/constants";
 import PropTypes from "prop-types";
 
 const TuningDropdownList = ({ activeState, dispatchActiveState }) => {
   return (
-    <>
+    <div className="tuningDropdown__dropdown">
       {allTuning.map((tuning) => (
         <TuningDropdownItem
           key={tuning.key}
@@ -19,7 +20,7 @@ const TuningDropdownList = ({ activeState, dispatchActiveState }) => {
           {tuning.dropdownBodyText}
         </TuningDropdownItem>
       ))}
-    </>
+    </div>
   );
 };
 
@@ -67,7 +68,7 @@ const TuningDropdown = () => {
     dropdownActive: false,
   });
 
-  const dropdownClassName = `tuningDropdown__dropdown tuningDropdown__dropdown__${
+  const dropdownClassName = `tuningDropdown__container tuningDropdown__container__${
     activeState.dropdownActive ? "active" : "inactive"
   }`;
 
@@ -76,10 +77,14 @@ const TuningDropdown = () => {
       <div className="tuningDropdown__text">Tuning</div>
       <ul className={dropdownClassName}>
         {activeState.dropdownActive ? (
-          <TuningDropdownList
-            activeState={activeState}
-            dispatchActiveState={dispatchActiveState}
-          />
+          <OutsideTrigger
+            callback={() => dispatchActiveState({ type: "TOGGLE_DROPDOWN" })}
+          >
+            <TuningDropdownList
+              activeState={activeState}
+              dispatchActiveState={dispatchActiveState}
+            />
+          </OutsideTrigger>
         ) : (
           <>
             <TuningActive
