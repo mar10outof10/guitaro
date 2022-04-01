@@ -5,7 +5,7 @@ import PageContainer from "./PageContainer/PageContainer.js";
 
 function App() {
   return (
-    <div className="app">
+    <div className="app" draggable="false">
       <Header />
       <PageContainer />
     </div>

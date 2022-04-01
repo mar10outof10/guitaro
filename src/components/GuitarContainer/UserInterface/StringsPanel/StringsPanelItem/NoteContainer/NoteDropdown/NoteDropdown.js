@@ -19,12 +19,9 @@ const NoteDropdown = function NoteDropdown({
   const currNote = currentNote.slice(0, -1);
   const currOctave = currentNote.slice(-1);
 
-  console.log(currNote, currOctave);
-
   const noteDropdownReducer = (state, action) => {
     switch (action.type) {
       case "TOGGLE_PROPERTY":
-        console.log(state);
         return {
           ...state,
           [action.property]:
@@ -43,11 +40,8 @@ const NoteDropdown = function NoteDropdown({
     }
   );
 
-  console.log(noteDropdownState);
-
   React.useEffect(() => {
     if (noteDropdownState.note && noteDropdownState.octave) {
-      console.log("ahh");
       stringsDispatch({
         type: "SET_FREQUENCY_TO_NOTE",
         id,

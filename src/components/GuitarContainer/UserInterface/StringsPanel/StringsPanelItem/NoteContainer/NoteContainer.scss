@@ -1,10 +1,12 @@
 .noteContainer {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 25px;
   height: 29px;
 
   color: paleturquoise;
+  font-size: 19px;
+  font-weight: 600;
 
   &__noteDropdown {
     border-radius: 10px;

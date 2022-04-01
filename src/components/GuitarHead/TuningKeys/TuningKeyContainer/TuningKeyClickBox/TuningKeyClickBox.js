@@ -3,7 +3,7 @@ import "./TuningKeyClickBox.scss";
 import React from "react";
 import { useStrings } from "../../../../../hooks/stringsContext";
 import PropTypes from "prop-types";
-import { initDrag, endDrag } from "../../../../../utils/tuningFunctions";
+import { initDrag } from "../../../../../utils/tuningFunctions";
 
 const TuningKeyClickBox = React.memo(function TuningKeyClickBox({
   positionDispatch,
@@ -40,7 +40,6 @@ const TuningKeyClickBox = React.memo(function TuningKeyClickBox({
         dragCheck(event);
         setMouseY(event.clientY);
       }}
-      onDragEnd={endDrag}
     ></div>
   );
 });

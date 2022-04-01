@@ -25,7 +25,6 @@ const NoteContainer = function NoteContainer({ id, frequency }) {
     dropdownState === "CLOSED"
       ? setDropdownState("OPEN")
       : setDropdownState("CLOSED");
-    console.log(dropdownState);
   };
 
   return (

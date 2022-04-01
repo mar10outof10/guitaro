@@ -9,8 +9,4 @@ const initDrag = (event) => {
   event.dataTransfer.setDragImage(dragNote, 0, 20);
 };
 
-const endDrag = (event) => {
-  console.log("tKey dragEnd");
-};
-
-export { initDrag, endDrag };
+export { initDrag };
