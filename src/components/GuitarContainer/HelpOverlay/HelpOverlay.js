@@ -3,9 +3,21 @@ import React from "react";
 import { useOverlay } from "../../../hooks/overlayContext";
 
 const HelpOverlay = function HelpOverlay() {
-  const { overlay } = useOverlay();
+  const { overlay, overlayDispatch } = useOverlay();
 
-  return <div className="helpOverlay">{overlay && <div>active</div>}</div>;
+  const overlayClassName = `helpOverlay helpOverlay__${
+    overlay ? "active" : "inactive"
+  }`;
+
+  const OverlayImage = () => (
+    <img
+      src={require("../../../assets/images/help_overlay.png")}
+      alt="How-to overlay"
+      onClick={() => overlayDispatch({ type: "TOGGLE_OVERLAY" })}
+    ></img>
+  );
+
+  return <div className={overlayClassName}>{overlay && <OverlayImage />}</div>;
 };
 
 export default HelpOverlay;

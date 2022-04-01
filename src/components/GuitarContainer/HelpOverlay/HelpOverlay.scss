@@ -1,6 +1,13 @@
 .helpOverlay {
-  visibility: hidden;
   position: absolute;
   height: 600px;
   width: 600px;
+
+  &__active {
+    visibility: visible;
+  }
+
+  &__inactive {
+    visibility: hidden;
+  }
 }
