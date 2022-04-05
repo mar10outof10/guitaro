@@ -16,22 +16,16 @@ const VolumeSlider = () => {
       0,
       Math.min(60, e.clientX - e.target.getBoundingClientRect().left)
     ); //x position within the element within range of 0-60
-    setPosition(clientX);
     audioDispatch({ type: "SET_VOLUME", volume: parseInt(clientX / 2) - 35 });
   });
 
-  // const buttonClassname = `volumeSlider volumeSlider${
-  //   overlay ? "__active" : "__inactive"
-  // }`;
+  const handleVolumeIconClick = React.useCallback((type) => {
+    audioDispatch({ type });
+  });
 
-  // const handleOnMouseDown = (e) => {
-  //   e.preventDefault();
-  //   overlayDispatch({ type: "TOGGLE_OVERLAY" });
-  // };
-
-  // const disableDefault = (e) => {
-  //   e.preventDefault();
-  // };
+  React.useEffect(() => {
+    setPosition((audio.volume + 35) * 2);
+  }, [audio.volume]);
 
   return (
     <div className="volumeSlider">
@@ -45,12 +39,12 @@ const VolumeSlider = () => {
         <img
           src={require("../../../../../assets/images/volume_low_icon.png")}
           alt="Low Volume Icon"
-          onClick={() => audioDispatch({ type: "REDUCE_VOLUME" })}
+          onClick={() => handleVolumeIconClick("DECREASE_VOLUME")}
         ></img>
         <img
           src={require("../../../../../assets/images/volume_high_icon.png")}
           alt="High Volume Icon"
-          onClick={() => audioDispatch({ type: "INCREASE_VOLUME" })}
+          onClick={() => handleVolumeIconClick("INCREASE_VOLUME")}
         ></img>
       </div>
     </div>

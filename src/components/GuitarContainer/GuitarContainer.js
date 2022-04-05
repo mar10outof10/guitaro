@@ -123,15 +123,15 @@ const GuitarContainer = React.memo(function GuitarContainer() {
           ...state,
           volume: action.volume,
         };
-      case "REDUCE_VOLUME":
+      case "DECREASE_VOLUME":
         return {
           ...state,
-          volume: Math.max(state.volume - 5, -50),
+          volume: Math.max(state.volume - 5, -35),
         };
       case "INCREASE_VOLUME":
         return {
           ...state,
-          volume: Math.min(state.volume + 5, 10),
+          volume: Math.min(state.volume + 5, -5),
         };
       case "TOGGLE_MUTE":
         return {
