@@ -19,7 +19,9 @@ const VolumeSlider = () => {
 
   return (
     <div className="volumeSlider">
-      <div className="volumeSlider__sliderContainer"></div>
+      <div className="volumeSlider__sliderContainer">
+        <div className="volumeSlider__sliderPointer"></div>
+      </div>
       <div className="volumeSlider__iconsContainer">
         <img
           src={require("../../../../../assets/images/volume_low_icon.png")}
