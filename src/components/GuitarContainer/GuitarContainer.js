@@ -118,7 +118,7 @@ const GuitarContainer = React.memo(function GuitarContainer() {
 
   const audioReducer = (state, action) => {
     switch (action.type) {
-      case "SET_NEW_VOLUME":
+      case "SET_VOLUME":
         return {
           ...state,
           volume: action.volume,
@@ -126,12 +126,12 @@ const GuitarContainer = React.memo(function GuitarContainer() {
       case "REDUCE_VOLUME":
         return {
           ...state,
-          volume: Math.max(state.volume - 2, -20),
+          volume: Math.max(state.volume - 5, -50),
         };
       case "INCREASE_VOLUME":
         return {
           ...state,
-          volume: Math.min(state.volume + 2, 10),
+          volume: Math.min(state.volume + 5, 10),
         };
       case "TOGGLE_MUTE":
         return {
@@ -156,7 +156,7 @@ const GuitarContainer = React.memo(function GuitarContainer() {
 
   const [audio, audioDispatch] = React.useReducer(audioReducer, {
     mute: false,
-    volume: 0,
+    volume: -5,
   });
 
   return (
