@@ -7,6 +7,8 @@ import { useAudio } from "../../hooks/audioContext";
 
 import { playFrequency } from "../../utils/audioFunctions";
 
+import { debounce } from "lodash";
+
 const GuitarNeck = React.memo(function GuitarNeck() {
   const neckRef = React.useRef(null);
 
@@ -48,7 +50,7 @@ const GuitarNeck = React.memo(function GuitarNeck() {
       className="guitarNeck"
       ref={neckRef}
       onTouchStart={handleTouchStart}
-      onTouchMove={audio.mute ? null : handleTouchMove}
+      onTouchMove={audio.mute ? null : debounce(handleTouchMove, 10)}
       onTouchEnd={handleTouchEnd}
     >
       <NeckStrings />
