@@ -7,3 +7,10 @@
   position: relative;
   background: linear-gradient(315deg, #b88018, transparent);
 }
+
+@media screen and (max-width: 600px) {
+  .guitar {
+    top: 60px;
+    height: 470px;
+  }
+}
