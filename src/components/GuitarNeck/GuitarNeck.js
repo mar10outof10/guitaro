@@ -27,7 +27,6 @@ const GuitarNeck = React.memo(function GuitarNeck() {
     const currX = e.changedTouches[0].clientX;
     const prevIndex = stringXCoordinates.findIndex((coord) => coord > touchPos);
     const currIndex = stringXCoordinates.findIndex((coord) => coord > currX);
-    console.log(touchPos, currX);
     if (prevIndex !== currIndex) {
       let lowIndex = Math.min(prevIndex, currIndex);
       let highIndex = Math.max(prevIndex, currIndex);
