@@ -5,6 +5,8 @@ import React from "react";
 const VolumeSlider = () => {
   const { audio, audioDispatch } = useAudio();
 
+  const sliderRef = React.useRef(null);
+
   const [position, setPosition] = React.useState(60);
 
   const pointerStyle = {
@@ -14,7 +16,7 @@ const VolumeSlider = () => {
   const handleSliderClick = React.useCallback((e) => {
     const clientX = Math.max(
       0,
-      Math.min(60, e.clientX - e.target.getBoundingClientRect().left)
+      Math.min(60, e.clientX - sliderRef.current.getBoundingClientRect().left)
     ); //x position within the element within range of 0-60
     audioDispatch({ type: "SET_VOLUME", volume: parseInt(clientX / 2) - 35 });
   });
@@ -33,7 +35,12 @@ const VolumeSlider = () => {
         className="volumeSlider__sliderContainer"
         onMouseDown={handleSliderClick}
       >
-        <div className="volumeSlider__sliderPointer" style={pointerStyle}></div>
+        <div className="volumeSlider__slider" ref={sliderRef}>
+          <div
+            className="volumeSlider__sliderPointer"
+            style={pointerStyle}
+          ></div>
+        </div>
       </div>
       <div className="volumeSlider__iconsContainer">
         <img

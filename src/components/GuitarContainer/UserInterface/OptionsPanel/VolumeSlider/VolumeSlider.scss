@@ -10,10 +10,16 @@
   border: double 5px skyblue;
 
   &__sliderContainer {
+    width: 100%;
+    height: 55%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__slider {
     position: relative;
     display: flex;
     justify-content: center;
-    height: 55%;
     width: 60px;
     border-left: 1px solid grey;
     border-right: 1px solid grey;
