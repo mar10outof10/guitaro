@@ -65,7 +65,10 @@ const GuitarContainer = React.memo(function GuitarContainer() {
           if (string.id === action.id) {
             return {
               ...string,
-              frequency: Math.round((string.frequency + 0.2) * 10) / 10,
+              frequency: Math.min(
+                Math.round((string.frequency + 0.2) * 10) / 10,
+                999.8
+              ),
             };
           } else {
             return string;
@@ -76,7 +79,10 @@ const GuitarContainer = React.memo(function GuitarContainer() {
           if (string.id === action.id) {
             return {
               ...string,
-              frequency: Math.round((string.frequency - 0.2) * 10) / 10,
+              frequency: Math.max(
+                Math.round((string.frequency - 0.2) * 10) / 10,
+                50.0
+              ),
             };
           } else {
             return string;

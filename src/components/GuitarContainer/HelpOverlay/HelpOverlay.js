@@ -13,6 +13,7 @@ const HelpOverlay = function HelpOverlay() {
     <img
       src={require("../../../assets/images/help_overlay.png")}
       alt="How-to overlay"
+      draggable="false"
       onClick={() => overlayDispatch({ type: "TOGGLE_OVERLAY" })}
     ></img>
   );

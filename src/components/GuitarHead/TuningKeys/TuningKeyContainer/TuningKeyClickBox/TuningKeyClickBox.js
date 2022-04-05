@@ -15,6 +15,9 @@ const TuningKeyClickBox = React.memo(function TuningKeyClickBox({
 
   const dragCheck = React.useCallback((event) => {
     event.preventDefault();
+    if (event.clientY === 0) {
+      return;
+    }
     if (event.clientY < mouseY) {
       stringsDispatch({ type: "INCREASE_FREQUENCY", id: stringID });
       positionDispatch({ type: "INCREASE_POSITION" });
@@ -39,6 +42,9 @@ const TuningKeyClickBox = React.memo(function TuningKeyClickBox({
       onDrag={() => {
         dragCheck(event);
         setMouseY(event.clientY);
+      }}
+      onDragEnd={(event) => {
+        event.preventDefault();
       }}
     ></div>
   );
