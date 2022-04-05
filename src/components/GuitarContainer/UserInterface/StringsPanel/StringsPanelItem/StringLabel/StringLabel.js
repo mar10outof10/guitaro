@@ -13,7 +13,7 @@ const StringLabel = function StringLabel({ frequency, children }) {
     <button
       className="stringLabel"
       onMouseDown={() => {
-        audio.mute ? null : playFrequency(frequency, audiovolume);
+        audio.mute ? null : playFrequency(frequency, audio.volume);
       }}
     >
       {children}
