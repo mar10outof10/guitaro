@@ -23,6 +23,7 @@ import React from "react";
 import { StringsProvider, useStrings } from "../../hooks/stringsContext.js";
 import { TuningProvider, useTuning } from "../../hooks/tuningContext.js";
 import { OverlayProvider, useOverlay } from "../../hooks/overlayContext.js";
+import { AudioProvider, useAudio } from "../../hooks/audioContext.js";
 
 const GuitarContainer = React.memo(function GuitarContainer() {
   const tuningReducer = (state, action) => {
@@ -115,6 +116,33 @@ const GuitarContainer = React.memo(function GuitarContainer() {
     }
   };
 
+  const audioReducer = (state, action) => {
+    switch (action.type) {
+      case "SET_NEW_VOLUME":
+        return {
+          ...state,
+          volume: action.volume,
+        };
+      case "REDUCE_VOLUME":
+        return {
+          ...state,
+          volume: Math.max(state.volume - 2, -20),
+        };
+      case "INCREASE_VOLUME":
+        return {
+          ...state,
+          volume: Math.min(state.volume + 2, 10),
+        };
+      case "TOGGLE_MUTE":
+        return {
+          ...state,
+          mute: !state.mute,
+        };
+      default:
+        return state;
+    }
+  };
+
   const [tuning, tuningDispatch] = React.useReducer(tuningReducer, {
     ...eStandardTuning,
   });
@@ -126,15 +154,22 @@ const GuitarContainer = React.memo(function GuitarContainer() {
 
   const [overlay, overlayDispatch] = React.useReducer(overlayReducer, true);
 
+  const [audio, audioDispatch] = React.useReducer(overlayReducer, {
+    mute: false,
+    volume: 0,
+  });
+
   return (
     <StringsProvider value={{ stringsDispatch, strings }}>
       <TuningProvider value={{ tuningDispatch, tuning }}>
         <OverlayProvider value={{ overlayDispatch, overlay }}>
-          <div className="guitarContainer">
-            <Guitar />
-            <UserInterface />
-            <HelpOverlay />
-          </div>
+          <AudioProvider value={{ audioDispatch, audio }}>
+            <div className="guitarContainer">
+              <Guitar />
+              <UserInterface />
+              <HelpOverlay />
+            </div>
+          </AudioProvider>
         </OverlayProvider>
       </TuningProvider>
     </StringsProvider>
