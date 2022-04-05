@@ -19,10 +19,12 @@ const VolumeSlider = () => {
       Math.min(60, e.clientX - sliderRef.current.getBoundingClientRect().left)
     ); //x position within the element within range of 0-60
     audioDispatch({ type: "SET_VOLUME", volume: parseInt(clientX / 2) - 35 });
+    audio.mute ? audioDispatch({ type: "TOGGLE_MUTE" }) : null;
   });
 
   const handleVolumeIconClick = React.useCallback((type) => {
     audioDispatch({ type });
+    audio.mute ? audioDispatch({ type: "TOGGLE_MUTE" }) : null;
   });
 
   React.useEffect(() => {
