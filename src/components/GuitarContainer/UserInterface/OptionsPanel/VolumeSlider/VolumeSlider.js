@@ -1,8 +1,8 @@
 import "./VolumeSlider.scss";
-// import { useAudio } from "../../../../../hooks/audioContext";
+import { useAudio } from "../../../../../hooks/audioContext";
 
 const VolumeSlider = () => {
-  // const { audio, audioDispatch } = useAudio();
+  const { audio, audioDispatch } = useAudio();
 
   // const buttonClassname = `volumeSlider volumeSlider${
   //   overlay ? "__active" : "__inactive"

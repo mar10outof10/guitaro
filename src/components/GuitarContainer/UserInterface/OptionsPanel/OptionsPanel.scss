@@ -5,4 +5,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 2px 2px 0 0;
+
+  &__optionsContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
 }

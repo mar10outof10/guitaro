@@ -1,16 +1,16 @@
 import "./MuteButton.scss";
-import { useOverlay } from "../../../../../hooks/overlayContext";
+import { useAudio } from "../../../../../hooks/audioContext";
 
 const MuteButton = () => {
-  const { overlay, overlayDispatch } = useOverlay();
+  const { audio, audioDispatch } = useAudio();
 
   const buttonClassname = `muteButton MuteButton${
-    overlay ? "__active" : "__inactive"
+    audio ? "__active" : "__inactive"
   }`;
 
   const handleOnMouseDown = (e) => {
     e.preventDefault();
-    overlayDispatch({ type: "TOGGLE_OVERLAY" });
+    audioDispatch({ type: "TOGGLE_MUTE" });
   };
 
   const disableDefault = (e) => {
@@ -23,7 +23,14 @@ const MuteButton = () => {
       onMouseDown={handleOnMouseDown}
       onFocus={disableDefault}
     >
-      <span className="muteButton__text">?{overlay}</span>
+      <span className="muteButton__text">
+        <img
+          src={require(`../../../../../assets/images/mute_button_${
+            audio.mute ? "active" : "inactive"
+          }.png`)}
+          alt={`Mute Button ${audio.mute ? "Active" : "Inactive"} icon`}
+        ></img>
+      </span>
     </button>
   );
 };

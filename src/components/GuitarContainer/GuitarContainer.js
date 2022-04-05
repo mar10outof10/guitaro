@@ -154,7 +154,7 @@ const GuitarContainer = React.memo(function GuitarContainer() {
 
   const [overlay, overlayDispatch] = React.useReducer(overlayReducer, true);
 
-  const [audio, audioDispatch] = React.useReducer(overlayReducer, {
+  const [audio, audioDispatch] = React.useReducer(audioReducer, {
     mute: false,
     volume: 0,
   });
