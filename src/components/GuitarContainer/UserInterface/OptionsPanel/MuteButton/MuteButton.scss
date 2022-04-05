@@ -1,19 +1,24 @@
 .muteButton {
-  height: 40px;
-  width: 40px;
-  background: #98670c;
-  border-top-left-radius: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 50px;
+  width: 45px;
+  background: #ab8d1b;
+  border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  color: skyblue;
-  border-style: outset;
+  border: double 5px skyblue;
+  padding: 0;
 
-  &__text {
-    font-size: 30px;
+  &__iconContainer {
+    height: 30px;
+    width: 30px;
   }
 
   &__active {
-    background: #302207;
-    color: #708d92;
-    border-style: inset;
+    border-color: #cc0600;
+  }
+
+  &__inactive {
   }
 }

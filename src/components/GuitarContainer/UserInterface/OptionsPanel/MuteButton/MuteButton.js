@@ -4,8 +4,8 @@ import { useAudio } from "../../../../../hooks/audioContext";
 const MuteButton = () => {
   const { audio, audioDispatch } = useAudio();
 
-  const buttonClassname = `muteButton MuteButton${
-    audio ? "__active" : "__inactive"
+  const buttonClassname = `muteButton muteButton${
+    audio.mute ? "__active" : "__inactive"
   }`;
 
   const handleOnMouseDown = (e) => {
@@ -23,14 +23,14 @@ const MuteButton = () => {
       onMouseDown={handleOnMouseDown}
       onFocus={disableDefault}
     >
-      <span className="muteButton__text">
+      <div className="muteButton__iconContainer">
         <img
           src={require(`../../../../../assets/images/mute_button_${
             audio.mute ? "active" : "inactive"
           }.png`)}
           alt={`Mute Button ${audio.mute ? "Active" : "Inactive"} icon`}
         ></img>
-      </span>
+      </div>
     </button>
   );
 };

@@ -4,11 +4,10 @@
   background: #98670c;
   border-top-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  color: skyblue;
-  border-style: outset;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: double 5px skyblue;
 
   &__sliderContainer {
     position: relative;
