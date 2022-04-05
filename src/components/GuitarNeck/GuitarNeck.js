@@ -18,14 +18,13 @@ const GuitarNeck = React.memo(function GuitarNeck() {
   const [touchPos, setTouchPos] = React.useState(null);
 
   const handleTouchStart = (e) => {
-    if (audio.mute) {
-      e.preventDefault();
-      return;
-    }
     setTouchPos(e.changedTouches[0].clientX);
   };
 
   const handleTouchMove = (e) => {
+    if (audio.mute) {
+      return null;
+    }
     const currX = e.changedTouches[0].clientX;
     const prevIndex = stringXCoordinates.findIndex((coord) => coord > touchPos);
     const currIndex = stringXCoordinates.findIndex((coord) => coord > currX);
