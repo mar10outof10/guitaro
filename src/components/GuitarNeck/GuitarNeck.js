@@ -12,6 +12,13 @@ import { debounce } from "lodash";
 const GuitarNeck = React.memo(function GuitarNeck() {
   const neckRef = React.useRef(null);
 
+  const [leftBound, setLeftBound] = React.useState(null);
+
+  React.useEffect(() => {
+    console.log("ye");
+    setLeftBound(neckRef.current.getBoundingClientRect().left);
+  }, [window.innerWidth]);
+
   const { strings } = useStrings();
   const { audio } = useAudio();
 
@@ -24,9 +31,10 @@ const GuitarNeck = React.memo(function GuitarNeck() {
   };
 
   const handleTouchMove = (e) => {
-    const currX = e.changedTouches[0].clientX;
+    const currX = e.changedTouches[0].clientX - leftBound;
     const prevIndex = stringXCoordinates.findIndex((coord) => coord > touchPos);
     const currIndex = stringXCoordinates.findIndex((coord) => coord > currX);
+    console.log(touchPos, currX);
     if (prevIndex !== currIndex) {
       let lowIndex = Math.min(prevIndex, currIndex);
       let highIndex = Math.max(prevIndex, currIndex);
