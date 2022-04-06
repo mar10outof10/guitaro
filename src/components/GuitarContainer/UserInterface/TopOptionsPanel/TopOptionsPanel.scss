@@ -5,3 +5,11 @@
   align-items: center;
   position: relative;
 }
+
+@media screen and (max-width: 600px) {
+  .topOptionsPanel {
+    position: absolute;
+    top: 60px;
+    width: 100%;
+  }
+}

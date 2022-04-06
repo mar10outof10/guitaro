@@ -13,3 +13,9 @@
     gap: 20px;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .optionsPanel {
+    z-index: 1000;
+  }
+}

@@ -8,4 +8,37 @@
   list-style-type: none;
   margin: 0 15px;
   padding: 0 0 10px;
+
+  &__mobileToggle {
+    display: none;
+    width: 260px;
+    height: 25px;
+
+    justify-content: center;
+    align-items: center;
+    color: #fff8ef;
+    background: black;
+    border: outset #fff8ef 3px;
+    font-family: cursive;
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: 800;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .stringsPanel {
+    justify-content: flex-start;
+    z-index: 1000;
+    max-height: 25px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    top: 525px;
+    transition: top ease 500ms;
+
+    &__mobileToggle {
+      display: flex;
+    }
+  }
 }

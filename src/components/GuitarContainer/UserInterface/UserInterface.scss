@@ -7,3 +7,9 @@
   justify-content: center;
   background: linear-gradient(135deg, #74afd4, #b8801891);
 }
+
+@media screen and (max-width: 600px) {
+  .userInterface {
+    justify-content: space-between;
+  }
+}

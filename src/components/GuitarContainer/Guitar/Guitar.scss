@@ -10,7 +10,10 @@
 
 @media screen and (max-width: 600px) {
   .guitar {
-    top: 60px;
-    height: 470px;
+    position: absolute;
+    background: linear-gradient(315deg, #b88018, black);
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    overflow: hidden;
   }
 }

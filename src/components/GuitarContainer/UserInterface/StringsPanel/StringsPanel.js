@@ -13,7 +13,12 @@ const StringsPanel = React.memo(function StringsPanel() {
     })
     .reverse();
 
-  return <ol className="stringsPanel">{stringItems}</ol>;
+  return (
+    <ol className="stringsPanel">
+      <div className="stringsPanel__mobileToggle">^ STRINGS ^</div>
+      {stringItems}
+    </ol>
+  );
 });
 
 export default StringsPanel;
