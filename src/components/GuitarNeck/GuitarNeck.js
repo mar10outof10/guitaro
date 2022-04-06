@@ -40,7 +40,7 @@ const GuitarNeck = React.memo(function GuitarNeck() {
         [lowIndex, highIndex] = [highIndex, 6];
       }
       for (let i = lowIndex; i < highIndex; i++) {
-        playFrequency(strings[i].frequency);
+        playFrequency(strings[i].frequency, audio.volume);
       }
     }
     setTouchPos(currX);
