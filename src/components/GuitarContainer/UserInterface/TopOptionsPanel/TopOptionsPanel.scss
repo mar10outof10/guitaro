@@ -9,7 +9,8 @@
 @media screen and (max-width: 600px) {
   .topOptionsPanel {
     position: absolute;
-    top: 60px;
+    align-items: flex-start;
+    top: 65px;
     width: 100%;
   }
 }

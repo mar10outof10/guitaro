@@ -8,7 +8,7 @@
     flex-flow: column wrap;
     align-items: center;
     background: linear-gradient(335deg, #8d6213, #302207);
-    border: solid #3d2b09 3px;
+    border: outset #fff8ef 3px;
     transition: max-height 500ms cubic-bezier(0.4, -1, 0.54, -0.08) 0ms;
     overflow: hidden;
     padding: 0;
@@ -45,5 +45,33 @@
     font-size: 34px;
     font-weight: 600;
     font-family: cursive;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .tuningDropdown {
+    &__text {
+      display: none;
+    }
+
+    &__dropdown {
+      padding-top: 4px;
+    }
+
+    &__container {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+
+      &__inactive {
+        border-radius: 0;
+        width: 200px;
+        max-height: 21px;
+        justify-content: center;
+        align-items: center;
+        color: #fff8ef;
+        border: outset #fff8ef 3px;
+        margin-top: 0;
+      }
+    }
   }
 }
