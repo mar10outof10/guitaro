@@ -10,3 +10,9 @@
     padding-top: 1px;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .stringsPanelItem {
+    width: 95%;
+  }
+}

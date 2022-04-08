@@ -11,14 +11,12 @@
 
   &__mobileToggle {
     display: none;
-    width: 260px;
+    width: 270px;
     height: 25px;
-
     justify-content: center;
     align-items: center;
     color: #fff8ef;
     background: black;
-    border: outset #fff8ef 3px;
     font-family: cursive;
     font-size: 12px;
     letter-spacing: 4px;
@@ -30,12 +28,15 @@
   .stringsPanel {
     justify-content: flex-start;
     z-index: 1000;
-    max-height: 25px;
+    max-height: 235px;
+    gap: 5px;
     overflow: hidden;
     padding: 0;
     position: absolute;
     top: 525px;
     transition: top ease 500ms;
+    background: linear-gradient(130deg, #74afd4, #b88018);
+    border: outset #fff8ef 3px;
 
     &__mobileToggle {
       display: flex;

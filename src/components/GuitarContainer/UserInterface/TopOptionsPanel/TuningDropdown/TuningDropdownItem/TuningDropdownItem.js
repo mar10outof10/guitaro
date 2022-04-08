@@ -15,8 +15,8 @@ const TuningDropdownItem = ({
   const { tuningDispatch } = React.useCallback(useTuning());
   const { stringsDispatch } = React.useCallback(useStrings());
 
-  const tuningClassName = `tuningDropdownItem ${
-    currentlyActive ? "tuningDropdownItem__active" : null
+  const tuningClassName = `tuningDropdownItem${
+    currentlyActive ? " tuningDropdownItem__active" : ""
   }`;
 
   const onClick = activeState.dropdownActive
