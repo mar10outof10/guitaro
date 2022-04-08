@@ -6,6 +6,7 @@
   position: absolute;
   top: 72.4px;
   left: 66.4px;
+  touch-action: none;
 
   &__column {
     display: flex;

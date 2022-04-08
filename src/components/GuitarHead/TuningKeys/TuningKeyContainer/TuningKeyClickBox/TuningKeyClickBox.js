@@ -14,14 +14,11 @@ const TuningKeyClickBox = React.memo(function TuningKeyClickBox({
   const [mouseY, setMouseY] = React.useState(0);
 
   const dragCheck = React.useCallback((event) => {
-    event.preventDefault();
-    if (event.clientY === 0) {
-      return;
-    }
-    if (event.clientY < mouseY) {
+    const clientY = event.clientY ? event.clientY : event.touches[0].clientY;
+    if (clientY < mouseY) {
       stringsDispatch({ type: "INCREASE_FREQUENCY", id: stringID });
       positionDispatch({ type: "INCREASE_POSITION" });
-    } else if (event.clientY > mouseY) {
+    } else if (clientY > mouseY) {
       stringsDispatch({ type: "DECREASE_FREQUENCY", id: stringID });
       positionDispatch({ type: "DECREASE_POSITION" });
     }
@@ -35,13 +32,20 @@ const TuningKeyClickBox = React.memo(function TuningKeyClickBox({
     <div
       draggable="true"
       className={clickboxClass}
-      onDragStart={() => {
+      onDragStart={(event) => {
         initDrag(event);
         setMouseY(event.clientY);
       }}
-      onDrag={() => {
+      onDrag={(event) => {
         dragCheck(event);
         setMouseY(event.clientY);
+      }}
+      onTouchStart={(event) => {
+        setMouseY(event.touches[0].clientY);
+      }}
+      onTouchMove={(event) => {
+        dragCheck(event);
+        setMouseY(event.touches[0].clientY);
       }}
       onDragEnd={(event) => {
         event.preventDefault();
