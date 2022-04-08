@@ -6,6 +6,16 @@ import { useStrings } from "../../../../hooks/stringsContext";
 const StringsPanel = React.memo(function StringsPanel() {
   const { strings } = useStrings();
 
+  const [mobileActive, setMobileActive] = React.useState(false);
+
+  const handleMobileClick = () => {
+    setMobileActive(!mobileActive);
+  };
+
+  const panelClassName = `stringsPanel${
+    mobileActive ? " stringsPanel__mobileActive" : ""
+  }`;
+
   const stringItems = strings
     .map((string) => {
       const { id, frequency } = { ...string };
@@ -14,8 +24,10 @@ const StringsPanel = React.memo(function StringsPanel() {
     .reverse();
 
   return (
-    <ol className="stringsPanel">
-      <div className="stringsPanel__mobileToggle">^ STRINGS ^</div>
+    <ol className={panelClassName}>
+      <div className="stringsPanel__mobileToggle" onClick={handleMobileClick}>
+        ^ STRINGS ^
+      </div>
       {stringItems}
     </ol>
   );

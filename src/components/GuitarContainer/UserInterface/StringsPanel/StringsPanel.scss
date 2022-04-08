@@ -38,6 +38,10 @@
     background: linear-gradient(130deg, #74afd4, #b88018);
     border: outset #fff8ef 3px;
 
+    &__mobileActive {
+      top: 310px;
+    }
+
     &__mobileToggle {
       display: flex;
     }
