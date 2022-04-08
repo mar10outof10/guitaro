@@ -30,7 +30,8 @@ const GuitarNeck = React.memo(function GuitarNeck() {
   };
 
   const handleTouchMove = (e) => {
-    const currX = e.changedTouches[0].clientX - leftBound;
+    const clientX = e.clientX ? e.clientX : e.changedTouches[0].clientX;
+    const currX = clientX - leftBound;
     const prevIndex = stringXCoordinates.findIndex((coord) => coord > touchPos);
     const currIndex = stringXCoordinates.findIndex((coord) => coord > currX);
     if (prevIndex !== currIndex) {
@@ -57,6 +58,7 @@ const GuitarNeck = React.memo(function GuitarNeck() {
       onTouchStart={handleTouchStart}
       onTouchMove={audio.mute ? null : debounce(handleTouchMove, 10)}
       onTouchEnd={handleTouchEnd}
+      onMouseMove={audio.mute ? null : debounce(handleTouchMove, 10)}
     >
       <NeckStrings />
     </div>
