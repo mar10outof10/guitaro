@@ -11,7 +11,9 @@ const HelpOverlay = function HelpOverlay() {
 
   const OverlayImage = () => (
     <img
-      src={require("../../../assets/images/help_overlay.png")}
+      src={require(`../../../assets/images/help_overlay${
+        window.innerWidth <= 600 ? "_mobile_closed" : ""
+      }.png`)}
       alt="How-to overlay"
       draggable="false"
       onClick={() => overlayDispatch({ type: "TOGGLE_OVERLAY" })}
