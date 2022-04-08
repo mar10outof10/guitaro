@@ -108,9 +108,18 @@ const GuitarContainer = React.memo(function GuitarContainer() {
   };
 
   const overlayReducer = (state, action) => {
+    console.log(state);
     switch (action.type) {
       case "TOGGLE_OVERLAY":
-        return !state;
+        return {
+          ...state,
+          active: !state.active,
+        };
+      case "TOGGLE_STRINGS_OPEN":
+        return {
+          ...state,
+          stringsPanelOpen: !state.stringsPanelOpen,
+        };
       default:
         return state;
     }
@@ -152,7 +161,10 @@ const GuitarContainer = React.memo(function GuitarContainer() {
     tuning.tuning
   );
 
-  const [overlay, overlayDispatch] = React.useReducer(overlayReducer, true);
+  const [overlay, overlayDispatch] = React.useReducer(overlayReducer, {
+    active: true,
+    stringsPanelOpen: false,
+  });
 
   const [audio, audioDispatch] = React.useReducer(audioReducer, {
     mute: false,

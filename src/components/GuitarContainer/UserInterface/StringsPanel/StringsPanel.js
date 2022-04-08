@@ -2,14 +2,17 @@ import "./StringsPanel.scss";
 import React from "react";
 import StringsPanelItem from "./StringsPanelItem/StringsPanelItem";
 import { useStrings } from "../../../../hooks/stringsContext";
+import { useOverlay } from "../../../../hooks/overlayContext";
 
 const StringsPanel = React.memo(function StringsPanel() {
   const { strings } = useStrings();
+  const { overlayDispatch } = useOverlay();
 
   const [mobileActive, setMobileActive] = React.useState(false);
 
   const handleMobileClick = () => {
     setMobileActive(!mobileActive);
+    overlayDispatch({ type: "TOGGLE_STRINGS_OPEN" });
   };
 
   const panelClassName = `stringsPanel${

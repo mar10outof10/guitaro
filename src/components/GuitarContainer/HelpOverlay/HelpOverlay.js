@@ -6,13 +6,17 @@ const HelpOverlay = function HelpOverlay() {
   const { overlay, overlayDispatch } = useOverlay();
 
   const overlayClassName = `helpOverlay helpOverlay__${
-    overlay ? "active" : "inactive"
+    overlay.active ? "active" : "inactive"
   }`;
 
   const OverlayImage = () => (
     <img
       src={require(`../../../assets/images/help_overlay${
-        window.innerWidth <= 600 ? "_mobile_closed" : ""
+        window.innerWidth <= 600
+          ? overlay.stringsPanelOpen
+            ? "_mobile_open"
+            : "_mobile_closed"
+          : ""
       }.png`)}
       alt="How-to overlay"
       draggable="false"
