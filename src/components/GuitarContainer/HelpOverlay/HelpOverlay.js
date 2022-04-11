@@ -21,7 +21,6 @@ const HelpOverlay = function HelpOverlay() {
   const windowWidth = window.innerWidth;
 
   React.useEffect(() => {
-    console.log(width);
     setOverlaySrc(
       require(`../../../assets/images/help_overlay${
         window.innerWidth <= 600
@@ -32,8 +31,6 @@ const HelpOverlay = function HelpOverlay() {
       }.png`)
     );
   }, [width, overlay.stringsPanelOpen]);
-
-  console.log(overlaySrc);
 
   const OverlayImage = () => (
     <img

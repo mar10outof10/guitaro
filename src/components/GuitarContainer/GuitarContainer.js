@@ -108,7 +108,6 @@ const GuitarContainer = React.memo(function GuitarContainer() {
   };
 
   const overlayReducer = (state, action) => {
-    console.log(state);
     switch (action.type) {
       case "TOGGLE_OVERLAY":
         return {

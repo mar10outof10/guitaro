@@ -25,29 +25,46 @@ const GuitarNeck = React.memo(function GuitarNeck() {
 
   const [touchPos, setTouchPos] = React.useState(null);
 
-  const handleTouchStart = (e) => {
-    setTouchPos(e.changedTouches[0].clientX);
-  };
+  const handleTouchStart = React.useCallback(
+    (e) => {
+      setTouchPos(e.changedTouches[0].clientX - leftBound);
+    },
+    [leftBound]
+  );
 
-  const handleTouchMove = (e) => {
-    const clientX = e.clientX ? e.clientX : e.changedTouches[0].clientX;
-    const currX = clientX - leftBound;
-    const prevIndex = stringXCoordinates.findIndex((coord) => coord > touchPos);
-    const currIndex = stringXCoordinates.findIndex((coord) => coord > currX);
-    if (prevIndex !== currIndex) {
-      let lowIndex = Math.min(prevIndex, currIndex);
-      let highIndex = Math.max(prevIndex, currIndex);
-      if (lowIndex === -1) {
-        [lowIndex, highIndex] = [highIndex, 6];
-      }
-      for (let i = lowIndex; i < highIndex; i++) {
-        playFrequency(strings[i].frequency, audio.volume);
-      }
-    }
-    setTouchPos(currX);
-  };
+  const handleMouseEnter = React.useCallback(
+    (e) => {
+      setTouchPos(e.clientX - leftBound);
+    },
+    [leftBound]
+  );
 
-  const handleTouchEnd = () => {
+  const handlePointerMove = React.useCallback(
+    (e) => {
+      const clientX = e.clientX ? e.clientX : e.changedTouches[0].clientX; // sets clientX depending on if mouse (true) or mobile touch (false)
+      const currX = clientX - leftBound;
+      const prevIndex = stringXCoordinates.findIndex(
+        (coord) => coord > touchPos
+      );
+      const currIndex = stringXCoordinates.findIndex((coord) => coord > currX);
+      if (prevIndex !== currIndex) {
+        // string X position falls within bounds of prev and curr X coords
+        let lowIndex = Math.min(prevIndex, currIndex);
+        let highIndex = Math.max(prevIndex, currIndex);
+        if (lowIndex === -1) {
+          // edge case for findIndex if x coord is beyond last string x position
+          [lowIndex, highIndex] = [highIndex, 6];
+        }
+        for (let i = lowIndex; i < highIndex; i++) {
+          playFrequency(strings[i].frequency, audio.volume);
+        }
+      }
+      setTouchPos(currX);
+    },
+    [touchPos]
+  );
+
+  const clearTouchPos = () => {
     setTouchPos(null);
   };
 
@@ -56,9 +73,10 @@ const GuitarNeck = React.memo(function GuitarNeck() {
       className="guitarNeck"
       ref={neckRef}
       onTouchStart={handleTouchStart}
-      onTouchMove={audio.mute ? null : debounce(handleTouchMove, 10)}
-      onTouchEnd={handleTouchEnd}
-      onMouseMove={audio.mute ? null : debounce(handleTouchMove, 10)}
+      onTouchMove={audio.mute ? null : debounce(handlePointerMove, 10)}
+      onMouseEnter={handleMouseEnter}
+      onMouseMove={audio.mute ? null : debounce(handlePointerMove, 10)}
+      onPointerLeave={debounce(clearTouchPos, 10)}
     >
       <NeckStrings />
     </div>
