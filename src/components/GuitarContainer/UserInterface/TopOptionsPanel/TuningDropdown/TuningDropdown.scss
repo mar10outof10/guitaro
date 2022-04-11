@@ -30,6 +30,11 @@
     }
   }
 
+  &__currentTuningLabel {
+    color: goldenrod;
+    font-weight: 600;
+  }
+
   &__dropdown {
     height: 175px;
     display: flex;
@@ -46,6 +51,10 @@
     font-weight: 600;
     font-family: cursive;
   }
+
+  &__mobileTextLabel {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -58,13 +67,17 @@
       padding: 4px;
     }
 
+    &__mobileTextLabel {
+      display: inline;
+    }
+
     &__container {
       border-top-left-radius: 0;
       border-top-right-radius: 0;
+      width: 265px;
 
       &__inactive {
         border-radius: 0;
-        width: 200px;
         max-height: 21px;
         justify-content: center;
         align-items: center;

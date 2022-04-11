@@ -38,7 +38,12 @@ const TuningActive = ({ activeState, dispatchActiveState }) => {
         activeState={activeState}
         dispatchActiveState={dispatchActiveState}
       >
-        {dropdownBodyText}
+        <span className="tuningDropdown__mobileTextLabel">
+          CURRENT TUNING:{" "}
+        </span>
+        <span className="tuningDropdown__currentTuningLabel">
+          {dropdownBodyText}
+        </span>
       </TuningDropdownItem>
     </>
   );
