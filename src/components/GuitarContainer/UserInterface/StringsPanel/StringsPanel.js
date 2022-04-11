@@ -29,7 +29,9 @@ const StringsPanel = React.memo(function StringsPanel() {
   return (
     <ol className={panelClassName}>
       <div className="stringsPanel__mobileToggle" onClick={handleMobileClick}>
-        ^ STRINGS ^
+        <span className="stringsPanel__arrow">&#11014;&#65039;</span>
+        <span className="stringsPanel__stringLabel">STRINGS</span>
+        <span className="stringsPanel__arrow">&#11014;&#65039;</span>
       </div>
       {stringItems}
     </ol>

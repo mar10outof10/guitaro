@@ -33,18 +33,30 @@
     overflow: hidden;
     padding: 0;
     position: absolute;
-    top: 525px;
+    top: 522px;
     transition: top ease 500ms;
     background: linear-gradient(130deg, #74afd4, #b88018);
     border: outset #fff8ef 3px;
 
+    &__stringLabel {
+      padding: 0 30px;
+    }
+
     &__mobileActive {
       top: 310px;
       overflow: unset;
+
+      .stringsPanel__arrow {
+        transform: rotate(180deg);
+      }
     }
 
     &__mobileToggle {
       display: flex;
+    }
+
+    &__arrow {
+      transition: all ease 800ms;
     }
   }
 }
