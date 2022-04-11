@@ -7,7 +7,7 @@ import GuitarFrame from "./GuitarFrame/GuitarFrame.js";
 
 const GuitarHead = React.memo(function GuitarHead() {
   return (
-    <div className="guitarHead">
+    <div className="guitarHead" draggable="false">
       <GuitarFrame />
       <TuningKeys />
       <TuningPosts />
