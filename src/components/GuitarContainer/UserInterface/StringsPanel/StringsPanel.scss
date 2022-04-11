@@ -33,7 +33,7 @@
     overflow: hidden;
     padding: 0;
     position: absolute;
-    top: 522px;
+    top: 523px;
     transition: top ease 500ms;
     background: linear-gradient(130deg, #74afd4, #b88018);
     border: outset #fff8ef 3px;
@@ -43,7 +43,7 @@
     }
 
     &__mobileActive {
-      top: 310px;
+      top: 314px;
       overflow: unset;
 
       .stringsPanel__arrow {
