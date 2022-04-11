@@ -77,13 +77,16 @@
       width: 265px;
 
       &__inactive {
-        border-radius: 0;
         max-height: 21px;
         justify-content: center;
         align-items: center;
         color: #fff8ef;
         border: outset #fff8ef 3px;
         margin-top: 0;
+
+        .tuningDropdownItem {
+          width: 100%;
+        }
       }
     }
   }
