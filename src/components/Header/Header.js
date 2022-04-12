@@ -12,7 +12,7 @@ const Header = React.memo(function Header() {
         ></img>
         <a
           className="header__githubLink"
-          href="https://github.com/mar10outof10"
+          href="https://github.com/mar10outof10/guitaro"
           target="_blank"
           rel="noreferrer"
         >
