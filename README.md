@@ -1,36 +1,24 @@
-# A guitar webapp thing
+# GUITARO
 
-Interactive elements, coming soon!
+Interactive Guitar webapp. Set your tuning and move your pointer around to play!
+
+[alt text](https://github.com/mar10outof10/guitaro/blob/main/screenshots/guitaro_desktop_screenshot.png)
+[alt text](https://github.com/mar10outof10/guitaro/blob/main/screenshots/guitaro_mobile_screenshot.png)
+[alt text](https://github.com/mar10outof10/guitaro/blob/main/screenshots/guitaro_desktop__overlay_screenshot.png)
+## Features
+
+- Tune each string by dragging the interactable tuning keys, or set the note through the UI panel.
+- Play by draging your mouse or finger along the guitar strings!
+- Click reset to set your strings back to the currently selected tuning.
+- 
 
 ## Available Scripts
 ### `npm start`
-
-Runs the app in the development mode.
-The page will reload when you make changes.
-### `npm test`
-
-Launches the test runner in the interactive watch mode.
-
+Runs the app in dev mode
 ### `npm run build`
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Creates optimized build of app in build folder.
 
 TODO:
-### Code Splitting
-
-[https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Making a Progressive Web App
-
-[https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-[https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-[https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Mobile Tuning-popup Indicator
+Lefty Mode
+String Snapping
