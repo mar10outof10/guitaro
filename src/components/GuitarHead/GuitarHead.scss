@@ -9,6 +9,7 @@
 
 @media screen and (max-width: 600px) {
   .guitarHead {
+    touch-action: none;
     top: 60px;
   }
 }

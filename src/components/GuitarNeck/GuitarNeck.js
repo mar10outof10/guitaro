@@ -25,19 +25,13 @@ const GuitarNeck = React.memo(function GuitarNeck() {
 
   const [touchPos, setTouchPos] = React.useState(null);
 
-  const handleTouchStart = React.useCallback(
-    (e) => {
-      setTouchPos(e.changedTouches[0].clientX - leftBound);
-    },
-    [leftBound]
-  );
+  const handleTouchStart = (e) => {
+    setTouchPos(e.changedTouches[0].clientX - leftBound);
+  };
 
-  const handleMouseEnter = React.useCallback(
-    (e) => {
-      setTouchPos(e.clientX - leftBound);
-    },
-    [leftBound]
-  );
+  const handleMouseEnter = (e) => {
+    setTouchPos(e.clientX - leftBound);
+  };
 
   const handlePointerMove = React.useCallback(
     (e) => {
