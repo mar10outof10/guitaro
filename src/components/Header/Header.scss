@@ -6,5 +6,43 @@
 
   display: flex;
   align-items: center;
-  justify-content: space-around;
+
+  &__logoContainer {
+    display: flex;
+    width: 100%;
+    margin: 0 10%;
+    justify-content: center;
+    align-items: center;
+    gap: 290px;
+  }
+
+  &__githubLink {
+    height: 32px;
+    width: 32px;
+    background: white;
+    border-radius: 100%;
+    padding: 1px;
+  }
+
+  &__githubLogo {
+    height: 32px;
+    width: 32px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .header {
+    &__logoContainer {
+      justify-content: space-between;
+      gap: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .header {
+    &__logoContainer {
+      margin: 0 5%;
+    }
+  }
 }
