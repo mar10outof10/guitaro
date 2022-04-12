@@ -2,6 +2,7 @@ import "./HelpOverlay.scss";
 import React from "react";
 import { useOverlay } from "../../../hooks/overlayContext";
 import { useWindowDimensions } from "../../../hooks/useWindowDimensions";
+import { initTone } from "../../../utils/audioFunctions";
 
 const HelpOverlay = function HelpOverlay() {
   const { overlay, overlayDispatch } = useOverlay();
@@ -18,6 +19,8 @@ const HelpOverlay = function HelpOverlay() {
     }.png`)
   );
 
+  const [toneInitialized, setToneInitialized] = React.useState(false);
+
   const windowWidth = window.innerWidth;
 
   React.useEffect(() => {
@@ -32,12 +35,20 @@ const HelpOverlay = function HelpOverlay() {
     );
   }, [width, overlay.stringsPanelOpen]);
 
+  const handleOnClick = async () => {
+    if (!toneInitialized) {
+      await initTone();
+      setToneInitialized(true);
+    }
+    overlayDispatch({ type: "TOGGLE_OVERLAY" });
+  };
+
   const OverlayImage = () => (
     <img
       src={overlaySrc}
       alt="How-to overlay"
       draggable="false"
-      onClick={() => overlayDispatch({ type: "TOGGLE_OVERLAY" })}
+      onClick={handleOnClick}
     ></img>
   );
 

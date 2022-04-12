@@ -1,5 +1,9 @@
 import * as Tone from "tone";
 
+const initTone = async () => {
+  await Tone.start();
+};
+
 const playFrequency = (frequency, volume) => {
   const audioNode = new Tone.Synth();
   const vol = new Tone.Volume(volume);
@@ -8,4 +12,4 @@ const playFrequency = (frequency, volume) => {
   setTimeout(() => audioNode.dispose(), 1000);
 };
 
-export { playFrequency };
+export { playFrequency, initTone };
