@@ -14,7 +14,11 @@ const TuningKeyClickBox = React.memo(function TuningKeyClickBox({
   const [mouseY, setMouseY] = React.useState(0);
 
   const dragCheck = React.useCallback((event) => {
-    const clientY = event.clientY ? event.clientY : event.touches[0].clientY;
+    const clientY =
+      event.clientY !== undefined ? event.clientY : event.touches[0].clientY; // event.clientY only has a value when mouse is used, touch screen gives undefined
+    if (clientY === 0) {
+      return; // onDrag fires one last time on dragEnd with a clientY of 0, this avoids side-effects.
+    }
     if (clientY < mouseY) {
       stringsDispatch({ type: "INCREASE_FREQUENCY", id: stringID });
       positionDispatch({ type: "INCREASE_POSITION" });
