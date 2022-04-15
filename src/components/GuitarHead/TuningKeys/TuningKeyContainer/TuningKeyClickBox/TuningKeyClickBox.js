@@ -5,6 +5,8 @@ import { useStrings } from "../../../../../hooks/stringsContext";
 import PropTypes from "prop-types";
 import { initDrag } from "../../../../../utils/tuningFunctions";
 
+import { throttle } from "lodash";
+
 const TuningKeyClickBox = React.memo(function TuningKeyClickBox({
   positionDispatch,
   stringID,
@@ -16,6 +18,7 @@ const TuningKeyClickBox = React.memo(function TuningKeyClickBox({
   const dragCheck = React.useCallback((event) => {
     const clientY =
       event.clientY !== undefined ? event.clientY : event.touches[0].clientY; // event.clientY only has a value when mouse is used, touch screen gives undefined
+    console.log(clientY);
     if (clientY === 0) {
       return; // onDrag fires one last time on dragEnd with a clientY of 0, this avoids side-effects.
     }
@@ -40,17 +43,17 @@ const TuningKeyClickBox = React.memo(function TuningKeyClickBox({
         initDrag(event);
         setMouseY(event.clientY);
       }}
-      onDrag={(event) => {
+      onDrag={throttle((event) => {
         dragCheck(event);
         setMouseY(event.clientY);
-      }}
+      }, 40)}
       onTouchStart={(event) => {
         setMouseY(event.touches[0].clientY);
       }}
-      onTouchMove={(event) => {
+      onTouchMove={throttle((event) => {
         dragCheck(event);
         setMouseY(event.touches[0].clientY);
-      }}
+      }, 40)}
       onDragEnd={(event) => {
         event.preventDefault();
       }}

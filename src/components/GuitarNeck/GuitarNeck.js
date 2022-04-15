@@ -7,7 +7,7 @@ import { useAudio } from "../../hooks/audioContext";
 
 import { playFrequency } from "../../utils/audioFunctions";
 
-import { debounce } from "lodash";
+import { throttle } from "lodash";
 
 const GuitarNeck = React.memo(function GuitarNeck() {
   const neckRef = React.useRef(null);
@@ -71,10 +71,10 @@ const GuitarNeck = React.memo(function GuitarNeck() {
       className="guitarNeck"
       ref={neckRef}
       onTouchStart={handleTouchStart}
-      onTouchMove={audio.mute ? null : debounce(handlePointerMove, 10)}
+      onTouchMove={audio.mute ? null : throttle(handlePointerMove, 10)}
       onMouseEnter={handleMouseEnter}
-      onMouseMove={audio.mute ? null : debounce(handlePointerMove, 10)}
-      onPointerLeave={debounce(clearTouchPos, 10)}
+      onMouseMove={audio.mute ? null : throttle(handlePointerMove, 10)}
+      onPointerLeave={throttle(clearTouchPos, 10)}
     >
       <NeckStrings />
     </div>
