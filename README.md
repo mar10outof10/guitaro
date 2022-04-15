@@ -21,6 +21,6 @@ Runs the app in dev mode
 Creates optimized build of app in build folder.
 
 TODO:
-Mobile Tuning-popup Indicator
-Lefty Mode
-String Snapping
+- Mobile Tuning-popup Indicator
+- Lefty Mode
+- String Snapping

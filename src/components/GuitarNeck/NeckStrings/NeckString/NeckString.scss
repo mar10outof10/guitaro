@@ -34,3 +34,12 @@
     left: 176.2px;
   }
 }
+
+//safari only backfill
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    .neckString {
+      object-fit: none;
+    }
+  }
+}
