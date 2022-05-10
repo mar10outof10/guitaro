@@ -7,7 +7,7 @@ import { allTuning } from "assets/schema/constants";
 import PropTypes from "prop-types";
 
 const TuningDropdownList = ({ activeState, dispatchActiveState }) => {
-  const stickyClassName = `tuningDropdownItem${
+  const stickyClassName = `tuningDropdownItem tuningDropdownItem__stickyToggle${
     activeState.stickyActive ? " tuningDropdownItem__stickyToggle__active" : ""
   }`;
   return (
