@@ -21,6 +21,12 @@ const TuningDropdownList = ({ activeState, dispatchActiveState }) => {
           {tuning.dropdownBodyText}
         </TuningDropdownItem>
       ))}
+      <div
+        className="tuningDropdown__stickyToggleItem tuningDropdownItem"
+        onClick={() => dispatchActiveState({ type: "TOGGLE_STICKY_DROPDOWN" })}
+      >
+        Sticky
+      </div>
     </div>
   );
 };
@@ -57,12 +63,19 @@ const TuningDropdown = () => {
       case "TOGGLE_DROPDOWN":
         return {
           ...state,
-          dropdownActive: !state.dropdownActive,
+          dropdownActive: state.stickyActive
+            ? state.dropdownActive
+            : !state.dropdownActive,
         };
-      case "SET_STATE":
+      case "SET_ACTIVE_KEY":
         return {
+          ...state,
           activeKey: action.key,
-          dropdownActive: !state.dropdownActive,
+        };
+      case "TOGGLE_STICKY_DROPDOWN":
+        return {
+          ...state,
+          stickyActive: !state.stickyActive,
         };
       default:
         return state;
@@ -72,6 +85,7 @@ const TuningDropdown = () => {
   const [activeState, dispatchActiveState] = React.useReducer(activeReducer, {
     activeKey: 1,
     dropdownActive: false,
+    stickyActive: false,
   });
 
   const dropdownClassName = `tuningDropdown__container tuningDropdown__container__${

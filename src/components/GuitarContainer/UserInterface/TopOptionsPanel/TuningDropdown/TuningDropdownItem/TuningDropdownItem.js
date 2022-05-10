@@ -23,7 +23,8 @@ const TuningDropdownItem = ({
     ? async () => {
         await tuningDispatch({ type: tuning });
         stringsDispatch({ type: "RESET_STRINGS" });
-        dispatchActiveState({ type: "SET_STATE", key: itemID });
+        dispatchActiveState({ type: "SET_ACTIVE_KEY", key: itemID });
+        dispatchActiveState({ type: "TOGGLE_DROPDOWN" });
       }
     : () => {
         dispatchActiveState({ type: "TOGGLE_DROPDOWN" });
