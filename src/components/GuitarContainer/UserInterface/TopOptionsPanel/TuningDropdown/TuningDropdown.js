@@ -1,9 +1,9 @@
 import "./TuningDropdown.scss";
 import React from "react";
 import TuningDropdownItem from "./TuningDropdownItem/TuningDropdownItem";
-import OutsideTrigger from "../../../../../hooks/outsideTrigger";
-import { useTuning } from "../../../../../hooks/tuningContext";
-import { allTuning } from "../../../../../assets/schema/constants";
+import OutsideTrigger from "hooks/outsideTrigger";
+import { useTuning } from "hooks/tuningContext";
+import { allTuning } from "assets/schema/constants";
 import PropTypes from "prop-types";
 
 const TuningDropdownList = ({ activeState, dispatchActiveState }) => {

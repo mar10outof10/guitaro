@@ -1,5 +1,5 @@
 import "./ResetPanel.scss";
-import { useStrings } from "../../../../hooks/stringsContext";
+import { useStrings } from "hooks/stringsContext";
 
 const ResetPanel = () => {
   const { strings, stringsDispatch } = useStrings();

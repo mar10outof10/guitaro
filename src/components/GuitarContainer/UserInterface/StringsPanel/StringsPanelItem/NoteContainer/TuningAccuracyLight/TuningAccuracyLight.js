@@ -1,8 +1,8 @@
 import React from "react";
 import "./TuningAccuracyLight.scss";
-import { freqTable } from "../../../../../../../assets/schema/constants";
+import { freqTable } from "assets/schema/constants";
 import PropTypes from "prop-types";
-import { useStrings } from "../../../../../../../hooks/stringsContext";
+import { useStrings } from "hooks/stringsContext";
 
 const TuningAccuracyLight = function TuningAccuracyLight({
   id,

@@ -1,8 +1,8 @@
 import "./StringsPanel.scss";
 import React from "react";
 import StringsPanelItem from "./StringsPanelItem/StringsPanelItem";
-import { useStrings } from "../../../../hooks/stringsContext";
-import { useOverlay } from "../../../../hooks/overlayContext";
+import { useStrings } from "hooks/stringsContext";
+import { useOverlay } from "hooks/overlayContext";
 
 const StringsPanel = React.memo(function StringsPanel() {
   const { strings } = useStrings();

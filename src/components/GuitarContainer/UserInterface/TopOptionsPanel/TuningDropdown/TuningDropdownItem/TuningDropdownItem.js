@@ -1,8 +1,8 @@
 import "./TuningDropdownItem.scss";
 import React from "react";
 import PropTypes from "prop-types";
-import { useTuning } from "../../../../../../hooks/tuningContext";
-import { useStrings } from "../../../../../../hooks/stringsContext";
+import { useTuning } from "hooks/tuningContext";
+import { useStrings } from "hooks/stringsContext";
 
 const TuningDropdownItem = ({
   itemID,

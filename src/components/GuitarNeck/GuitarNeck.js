@@ -2,10 +2,10 @@ import "./GuitarNeck.scss";
 import React from "react";
 import NeckStrings from "./NeckStrings/NeckStrings.js";
 
-import { useStrings } from "../../hooks/stringsContext";
-import { useAudio } from "../../hooks/audioContext";
+import { useStrings } from "hooks/stringsContext";
+import { useAudio } from "hooks/audioContext";
 
-import { playFrequency } from "../../utils/audioFunctions";
+import { playFrequency } from "utils/audioFunctions";
 
 import { throttle } from "lodash";
 

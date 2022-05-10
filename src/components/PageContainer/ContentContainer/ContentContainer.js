@@ -1,6 +1,6 @@
 import "./ContentContainer.scss";
 import React from "react";
-import GuitarContainer from "../../GuitarContainer/GuitarContainer.js";
+import GuitarContainer from "components/GuitarContainer/GuitarContainer.js";
 
 const ContentContainer = React.memo(function ContentContainer() {
   return (

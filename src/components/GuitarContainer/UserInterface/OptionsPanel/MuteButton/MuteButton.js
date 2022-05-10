@@ -1,5 +1,5 @@
 import "./MuteButton.scss";
-import { useAudio } from "../../../../../hooks/audioContext";
+import { useAudio } from "hooks/audioContext";
 
 const MuteButton = () => {
   const { audio, audioDispatch } = useAudio();

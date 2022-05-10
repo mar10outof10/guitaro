@@ -1,8 +1,8 @@
 import "./HelpOverlay.scss";
 import React from "react";
-import { useOverlay } from "../../../hooks/overlayContext";
-import { useWindowDimensions } from "../../../hooks/useWindowDimensions";
-import { initTone } from "../../../utils/audioFunctions";
+import { useOverlay } from "hooks/overlayContext";
+import { useWindowDimensions } from "hooks/useWindowDimensions";
+import { initTone } from "utils/audioFunctions";
 
 const HelpOverlay = function HelpOverlay() {
   const { overlay, overlayDispatch } = useOverlay();

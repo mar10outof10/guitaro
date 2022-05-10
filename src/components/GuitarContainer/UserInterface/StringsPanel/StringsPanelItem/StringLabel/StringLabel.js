@@ -1,10 +1,9 @@
 import React from "react";
 import "./StringLabel.scss";
 import PropTypes from "prop-types";
-import { useStrings } from "../../../../../../hooks/stringsContext";
-import { useAudio } from "../../../../../../hooks/audioContext";
+import { useAudio } from "hooks/audioContext";
 
-import { playFrequency } from "../../../../../../utils/audioFunctions";
+import { playFrequency } from "utils/audioFunctions";
 
 const StringLabel = function StringLabel({ frequency, children }) {
   const { audio } = useAudio();

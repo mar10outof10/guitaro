@@ -1,9 +1,8 @@
 import React from "react";
 import "./NoteDropdown.scss";
-import { freqTable } from "../../../../../../../assets/schema/constants";
 import PropTypes from "prop-types";
-import { useStrings } from "../../../../../../../hooks/stringsContext";
-import OutsideTrigger from "../../../../../../../hooks/outsideTrigger";
+import { useStrings } from "hooks/stringsContext";
+import OutsideTrigger from "hooks/outsideTrigger";
 import NoteDropdownItem from "./NoteDropdownItem/NoteDropdownItem";
 
 const NoteDropdown = function NoteDropdown({

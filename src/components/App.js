@@ -1,7 +1,7 @@
 import "./App.scss";
 import React from "react";
-import Header from "./Header/Header.js";
-import PageContainer from "./PageContainer/PageContainer.js";
+import Header from "components/Header/Header.js";
+import PageContainer from "components/PageContainer/PageContainer.js";
 
 function App() {
   return (

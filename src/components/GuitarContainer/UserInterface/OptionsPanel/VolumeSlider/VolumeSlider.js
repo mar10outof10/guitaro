@@ -1,5 +1,5 @@
 import "./VolumeSlider.scss";
-import { useAudio } from "../../../../../hooks/audioContext";
+import { useAudio } from "hooks/audioContext";
 import React from "react";
 
 const VolumeSlider = () => {

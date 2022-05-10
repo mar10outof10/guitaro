@@ -1,8 +1,6 @@
 import React from "react";
 import "./NoteDropdownItem.scss";
-import { freqTable } from "../../../../../../../../assets/schema/constants";
 import PropTypes from "prop-types";
-import { useStrings } from "../../../../../../../../hooks/stringsContext";
 
 const NoteDropdownItem = function NoteDropdownItem({
   note,

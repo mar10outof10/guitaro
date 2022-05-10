@@ -1,7 +1,7 @@
 import React from "react";
 import "./NoteContainer.scss";
 import PropTypes from "prop-types";
-import { freqTable } from "../../../../../../assets/schema/constants";
+import { freqTable } from "assets/schema/constants";
 import TuningAccuracyLight from "./TuningAccuracyLight/TuningAccuracyLight";
 import NoteDropdown from "./NoteDropdown/NoteDropdown";
 

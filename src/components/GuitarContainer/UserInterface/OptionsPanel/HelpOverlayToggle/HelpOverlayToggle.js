@@ -1,5 +1,5 @@
 import "./HelpOverlayToggle.scss";
-import { useOverlay } from "../../../../../hooks/overlayContext";
+import { useOverlay } from "hooks/overlayContext";
 
 const HelpOverlayToggle = () => {
   const { overlay, overlayDispatch } = useOverlay();
