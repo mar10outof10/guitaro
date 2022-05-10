@@ -14,4 +14,10 @@
   &__active {
     color: goldenrod;
   }
+
+  &__stickyToggle {
+    &__active {
+      color: violet;
+    }
+  }
 }

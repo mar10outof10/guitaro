@@ -7,6 +7,9 @@ import { allTuning } from "assets/schema/constants";
 import PropTypes from "prop-types";
 
 const TuningDropdownList = ({ activeState, dispatchActiveState }) => {
+  const stickyClassName = `tuningDropdownItem${
+    activeState.stickyActive ? " tuningDropdownItem__stickyToggle__active" : ""
+  }`;
   return (
     <div className="tuningDropdown__dropdown">
       {allTuning.map((tuning) => (
@@ -22,10 +25,10 @@ const TuningDropdownList = ({ activeState, dispatchActiveState }) => {
         </TuningDropdownItem>
       ))}
       <div
-        className="tuningDropdown__stickyToggleItem tuningDropdownItem"
+        className={stickyClassName}
         onClick={() => dispatchActiveState({ type: "TOGGLE_STICKY_DROPDOWN" })}
       >
-        Sticky
+        Sticky Menu
       </div>
     </div>
   );
